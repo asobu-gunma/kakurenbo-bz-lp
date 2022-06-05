@@ -10,6 +10,7 @@ v-app
 import { Vue, Component } from "nuxt-property-decorator"
 import GlobalHeader from "~/components/global/Header.vue"
 import GlobalFooter from "~/components/global/Footer.vue"
+import { NavItem } from "~/types/nav"
 
 @Component({
   components: {
@@ -18,12 +19,13 @@ import GlobalFooter from "~/components/global/Footer.vue"
   }
 })
 export default class DefaultLayout extends Vue {
-  navItems: string[] = [
-    'スポかくとは？',
-    'ニュース',
-    'サービス',
-    '運営者情報',
-    'お問い合わせ',
+  navItems: NavItem[] = [
+    { text: 'スポかくとは？', url: '' },
+    { text: 'ニュース', url: '' },
+    { text: 'サービス', url: '' },
+    { text: '運営者情報', url: '' },
+    { text: 'お問い合わせ', url: '' },
+    { text: 'ブログ', url: 'https://www.kakurenbo.club/blog', external: true },
   ]
 }
 </script>
