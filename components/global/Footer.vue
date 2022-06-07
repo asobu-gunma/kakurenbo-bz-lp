@@ -45,7 +45,7 @@ v-footer(dark padless)
 import { Vue, Component, Prop } from "nuxt-property-decorator"
 import { NavIcon, NavItem } from "~/types"
 
-@Component({})
+@Component
 export default class GlobalFooter extends Vue {
   @Prop({ type: Array, required: true })
   readonly navItems!: NavItem[]

@@ -1,28 +1,8 @@
 <template lang="pug">
 div
   .hero.mb-16
-  v-spacer
   v-container
-    v-row.mb-16
-      v-col(cols="6" order="2" lg)
-        .insert-image
-      v-col(cols="6" order="1" lg)
-        h2.mb-2 スポかくとは？
-        .description
-          p
-            | 「スポーツかくれんぼ（通称: スポかく）」は皆さんが一度は遊んだことがあるであろう
-            | かくれんぼに得点要素を加えてできた、全く新しいスポーツです。缶蹴りのように鬼は
-            | 拠点を守りながら探し、隠れる側は鬼に見つからないように拠点を攻める、子供の頃に
-            | 遊んだかくれんぼよりもより白熱して楽しむことができます。
-          p
-            | 下は4歳から上は60代まで、老若男女別け隔てなく同じフィールド、同じルールで楽しめる
-            | ボーダレスなスポーツとして、発祥の地、群馬県を中心に、世界への展開を見据え
-            | 日夜活動をしています。
-        v-btn.border-bold.font-weight-bold(
-          tile
-          outlined
-          large
-        ) ルールを知りたい方はこちらから！
+    top-about
     #news.mb-16
       h2.mb-2 NEWS
       v-btn.border-bold.mb-3(
@@ -193,9 +173,6 @@ export default class TopPage extends Vue {
   width: 100%
   height: calc(100vh - 64px)
   background-color: #f4f4f4
-.description
-  font-size: 14px
-  letter-spacing: 3px
 .insert-image
   width: 100%
   padding-top: 60%
