@@ -1,10 +1,66 @@
 <template lang="pug">
 div
+  .hero.mb-16
+  v-spacer
+  v-container
+    v-row.mb-16
+      v-col(cols="6" order="2" lg)
+        .insert-image
+      v-col(cols="6" order="1" lg)
+        h2.mb-2 スポかくとは？
+        .description
+          p
+            | 「スポーツかくれんぼ（通称: スポかく）」は皆さんが一度は遊んだことがあるであろう
+            | かくれんぼに得点要素を加えてできた、全く新しいスポーツです。缶蹴りのように鬼は
+            | 拠点を守りながら探し、隠れる側は鬼に見つからないように拠点を攻める、子供の頃に
+            | 遊んだかくれんぼよりもより白熱して楽しむことができます。
+          p
+            | 下は4歳から上は60代まで、老若男女別け隔てなく同じフィールド、同じルールで楽しめる
+            | ボーダレスなスポーツとして、発祥の地、群馬県を中心に、世界への展開を見据え
+            | 日夜活動をしています。
+        v-btn.border-bold.font-weight-bold(
+          tile
+          outlined
+          large
+        ) ルールを知りたい方はこちらから！
+    h2.mb-2 NEWS
+    v-btn.border-bold.mb-3(
+      block
+      tile
+      outlined
+      height="60px"
+    )
+      span.body-2.me-5 2022.06.08
+      v-chip.me-5(label small) NEWS
+      span.body-2 NHKにてスポーツかくれんぼが特集されました！
+      v-spacer
+      v-icon mdi-chevron-right
+    v-btn.border-bold.font-weight-bold(
+      tile
+      outlined
+      large
+    ) 過去のNEWSの一覧はこちらから！
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator"
 
 @Component
-export default class DefaultLayout extends Vue {}
+export default class TopPage extends Vue {}
 </script>
+
+<style lang="sass">
+.hero
+  width: 100%
+  height: calc(100vh - 64px)
+  background-color: #f4f4f4
+.description
+  font-size: 13px
+  letter-spacing: 3px
+.insert-image
+  width: 100%
+  padding-top: 60%
+  background-color: #f4f4f4
+.border-bold
+  border-width: 3px
+</style>
