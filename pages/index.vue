@@ -23,30 +23,73 @@ div
           outlined
           large
         ) ルールを知りたい方はこちらから！
-    h2.mb-2 NEWS
-    v-btn.border-bold.mb-3(
-      v-for="news in newsList"
-      :key="news.id"
-      block
-      tile
-      outlined
-      height="60px"
-      :nuxt="!news.external"
-      :to="news.external ? '' : news.url"
-      :href="news.external ? news.url : ''"
-      :target="news.external ? '_blank' : ''"
-      :rel="news.external ? 'noopener' : ''"
-    )
-      span.body-2.me-5 {{ news.postedAt }}
-      v-chip.me-5(label small) {{ news.category }}
-      span.body-2 {{ news.title }}
-      v-spacer
-      v-icon mdi-chevron-right
-    v-btn.border-bold.font-weight-bold(
-      tile
-      outlined
-      large
-    ) 過去のNEWSの一覧はこちらから！
+    #news.mb-16
+      h2.mb-2 NEWS
+      v-btn.border-bold.mb-3(
+        v-for="news in newsList"
+        :key="news.id"
+        block
+        tile
+        outlined
+        height="60px"
+        :nuxt="!news.external"
+        :to="news.external ? '' : news.url"
+        :href="news.external ? news.url : ''"
+        :target="news.external ? '_blank' : ''"
+        :rel="news.external ? 'noopener' : ''"
+      )
+        span.body-2.me-5 {{ news.postedAt }}
+        v-chip.me-5(label small) {{ news.category }}
+        span.body-2 {{ news.title }}
+        v-spacer
+        v-icon mdi-chevron-right
+      v-btn.border-bold.font-weight-bold(
+        tile
+        outlined
+        large
+      ) 過去のNEWSの一覧はこちらから！
+    #service.mb-16
+      h2.mb-2 SERVICE
+      h3.mb-2 かくれんぼ出張開催
+      h4.mb-5
+        div スポーツかくれんぼを活用して
+        div 企業や地域の課題解決をお手伝いします！
+      v-row.mb-2
+        v-col(cols="4")
+          v-card.text-center.border-bold(
+            tile
+            outlined
+          )
+            v-card-text.title.font-weight-bold.text--primary 企業研修
+            .insert-image
+            v-card-text.caption.text--primary
+              div 内定者や親友社員のチーム形成
+              div 既存社員同士のより強い結束力の醸成に！
+        v-col(cols="4")
+          v-card.text-center.border-bold(
+            tile
+            outlined
+          )
+            v-card-text.title.font-weight-bold.text--primary 地域活性化
+            .insert-image
+            v-card-text.caption.text--primary
+              div 地域の人々のつながり造り
+              div 観光地への集客イベントに！
+        v-col(cols="4")
+          v-card.text-center.border-bold(
+            tile
+            outlined
+          )
+            v-card-text.title.font-weight-bold.text--primary 商業施設イベント
+            .insert-image
+            v-card-text.caption.text--primary
+              div 週末や季節ごとの集客
+              div 来場者の購買促進イベントに！
+      v-btn.border-bold.font-weight-bold(
+        tile
+        outlined
+        large
+      ) 出張開催についての詳細はこちらから！
 </template>
 
 <script lang="ts">
@@ -97,5 +140,6 @@ export default class TopPage extends Vue {
   padding-top: 60%
   background-color: #f4f4f4
 .border-bold
-  border-width: 3px
+  border-color: black !important
+  border-width: 3px !important
 </style>
