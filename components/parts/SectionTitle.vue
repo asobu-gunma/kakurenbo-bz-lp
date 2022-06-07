@@ -8,7 +8,7 @@ h2
 import { Vue, Component, Prop } from "nuxt-property-decorator"
 
 @Component
-export default class SectionTitle extends Vue {
+export default class PartsSectionTitle extends Vue {
   @Prop({ type: String, required: true })
   readonly main!: string
 

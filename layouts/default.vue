@@ -29,3 +29,13 @@ export default class DefaultLayout extends Vue {
   ]
 }
 </script>
+
+<style lang="sass">
+.insert-image
+  width: 100%
+  padding-top: 60%
+  background-color: #f4f4f4
+.border-bold
+  border-color: black !important
+  border-width: 3px !important
+</style>

@@ -6,14 +6,7 @@ div
     top-news.mb-16(:newsList="newsList")
     top-service.mb-16
     top-event.mb-16
-  v-btn(
-    fab
-    x-large
-    fixed
-    right
-    bottom
-  )
-    v-icon mdi-email
+  parts-contact-btn
 </template>
 
 <script lang="ts">
@@ -56,11 +49,4 @@ export default class TopPage extends Vue {
   width: 100%
   height: calc(100vh - 64px)
   background-color: #f4f4f4
-.insert-image
-  width: 100%
-  padding-top: 60%
-  background-color: #f4f4f4
-.border-bold
-  border-color: black !important
-  border-width: 3px !important
 </style>

@@ -22,7 +22,7 @@ import { Vue, Component, Prop } from "nuxt-property-decorator"
 import { News } from "~/types"
 
 @Component
-export default class NewsPost extends Vue {
+export default class PartsNewsPost extends Vue {
   @Prop({ type: Object, required: true })
   readonly news!: News
 }

@@ -11,7 +11,7 @@ v-btn.border-bold.font-weight-bold(
 import { Vue, Component } from "nuxt-property-decorator"
 
 @Component
-export default class CtaBtn extends Vue {}
+export default class PartsCtaBtn extends Vue {}
 </script>
 
 <style lang="sass" scoped>

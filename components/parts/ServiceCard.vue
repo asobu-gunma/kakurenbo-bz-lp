@@ -14,7 +14,7 @@ v-card.text-center.border-bold(
 import { Vue, Component, Prop } from "nuxt-property-decorator"
 
 @Component
-export default class ServiceCard extends Vue {
+export default class PartsServiceCard extends Vue {
   @Prop({ type: String, required: true })
   readonly title!: string
 
