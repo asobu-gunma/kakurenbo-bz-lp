@@ -2,32 +2,8 @@
 div
   .hero.mb-16
   v-container
-    top-about
-    #news.mb-16
-      h2.mb-2 NEWS
-      v-btn.border-bold.mb-3(
-        v-for="news in newsList"
-        :key="news.id"
-        block
-        tile
-        outlined
-        height="60px"
-        :nuxt="!news.external"
-        :to="news.external ? '' : news.url"
-        :href="news.external ? news.url : ''"
-        :target="news.external ? '_blank' : ''"
-        :rel="news.external ? 'noopener' : ''"
-      )
-        span.body-2.me-5 {{ news.postedAt }}
-        v-chip.me-5(label small) {{ news.category }}
-        span.body-2 {{ news.title }}
-        v-spacer
-        v-icon mdi-chevron-right
-      v-btn.border-bold.font-weight-bold(
-        tile
-        outlined
-        large
-      ) 過去のNEWSの一覧はこちらから！
+    top-about.mb-16
+    top-news.mb-16(:newsList="newsList")
     #service.mb-16
       h2.mb-2 SERVICE
       h3.mb-2 かくれんぼ出張開催

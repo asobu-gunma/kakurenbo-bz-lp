@@ -1,6 +1,6 @@
 <template lang="pug">
 section#about
-  v-row.mb-16
+  v-row
     v-col(cols="6" order="2" lg)
       .insert-image
     v-col(cols="6" order="1" lg)
