@@ -6,6 +6,14 @@ div
     top-news.mb-16(:newsList="newsList")
     top-service.mb-16
     top-event.mb-16
+  v-btn(
+    fab
+    x-large
+    fixed
+    right
+    bottom
+  )
+    v-icon mdi-email
 </template>
 
 <script lang="ts">
