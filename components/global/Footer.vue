@@ -43,7 +43,7 @@ v-footer(dark padless)
 
 <script lang="ts">
 import { Vue, Component, Prop } from "nuxt-property-decorator"
-import { NavIcon, NavItem } from "~/types/nav"
+import { NavIcon, NavItem } from "~/types"
 
 @Component({})
 export default class GlobalFooter extends Vue {

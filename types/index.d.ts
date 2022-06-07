@@ -8,3 +8,12 @@ export interface NavIcon {
   name: string
   url: string
 }
+
+export interface News {
+  id: number
+  postedAt: string
+  category: string
+  title: string
+  url: string
+  external: boolean
+}

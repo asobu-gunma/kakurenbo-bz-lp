@@ -25,14 +25,21 @@ div
         ) ルールを知りたい方はこちらから！
     h2.mb-2 NEWS
     v-btn.border-bold.mb-3(
+      v-for="news in newsList"
+      :key="news.id"
       block
       tile
       outlined
       height="60px"
+      :nuxt="!news.external"
+      :to="news.external ? '' : news.url"
+      :href="news.external ? news.url : ''"
+      :target="news.external ? '_blank' : ''"
+      :rel="news.external ? 'noopener' : ''"
     )
-      span.body-2.me-5 2022.06.08
-      v-chip.me-5(label small) NEWS
-      span.body-2 NHKにてスポーツかくれんぼが特集されました！
+      span.body-2.me-5 {{ news.postedAt }}
+      v-chip.me-5(label small) {{ news.category }}
+      span.body-2 {{ news.title }}
       v-spacer
       v-icon mdi-chevron-right
     v-btn.border-bold.font-weight-bold(
@@ -44,9 +51,37 @@ div
 
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator"
+import { News } from "~/types"
 
 @Component
-export default class TopPage extends Vue {}
+export default class TopPage extends Vue {
+  newsList: News[] = [
+    {
+      id: 3,
+      postedAt: '2022.06.09',
+      category: 'EVENT',
+      title: '【7月のかくれんぼ選手権】お申し込み受付中です！',
+      url: '',
+      external: true
+    },
+    {
+      id: 2,
+      postedAt: '2022.06.08',
+      category: 'MEDIA',
+      title: 'NHKにてスポーツかくれんぼが特集されました！',
+      url: '',
+      external: true
+    },
+    {
+      id: 1,
+      postedAt: '2022.06.07',
+      category: 'NEWS',
+      title: 'ホームページをリニューアルしました！',
+      url: '',
+      external: false
+    }
+  ]
+}
 </script>
 
 <style lang="sass">

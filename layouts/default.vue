@@ -10,7 +10,7 @@ v-app
 import { Vue, Component } from "nuxt-property-decorator"
 import GlobalHeader from "~/components/global/Header.vue"
 import GlobalFooter from "~/components/global/Footer.vue"
-import { NavItem } from "~/types/nav"
+import { NavItem } from "~/types"
 
 @Component({
   components: {

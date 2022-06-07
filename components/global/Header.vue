@@ -23,7 +23,7 @@ v-app-bar(app flat)
 
 <script lang="ts">
 import { Vue, Component, Prop } from "nuxt-property-decorator"
-import { NavItem } from "~/types/nav"
+import { NavItem } from "~/types"
 
 @Component
 export default class GlobalHeader extends Vue {
