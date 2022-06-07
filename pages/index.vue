@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  .hero.mb-16
+  top-hero.mb-16
   v-container
     top-about.mb-16
     top-news.mb-16(:newsList="newsList")
@@ -43,10 +43,3 @@ export default class TopPage extends Vue {
   ]
 }
 </script>
-
-<style lang="sass">
-.hero
-  width: 100%
-  height: calc(100vh - 64px)
-  background-color: #f4f4f4
-</style>
