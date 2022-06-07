@@ -5,7 +5,7 @@ div
     top-about.mb-16
     top-news.mb-16(:newsList="newsList")
     top-service.mb-16
-    top-event
+    top-event.mb-16
 </template>
 
 <script lang="ts">

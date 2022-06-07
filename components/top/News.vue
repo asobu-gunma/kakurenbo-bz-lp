@@ -1,6 +1,9 @@
 <template lang="pug">
 section#news
-  h2.mb-2 NEWS
+  parts-section-title.mb-2(
+    main="NEWS"
+    sub="お知らせ"
+  )
   parts-news-post(
     v-for="news in newsList"
     :key="news.id"

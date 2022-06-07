@@ -1,6 +1,9 @@
 <template lang="pug">
 section#event
-  h2.mb-2 EVENT
+  parts-section-title.mb-2(
+    main="EVENT"
+    sub="公式イベント"
+  )
   v-row.mb-2
     v-col(cols="6")
       .insert-image

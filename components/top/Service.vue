@@ -1,6 +1,9 @@
 <template lang="pug">
 section#service
-  h2.mb-2 SERVICE
+  parts-section-title.mb-2(
+    main="SERVICE"
+    sub="サービス"
+  )
   h3.mb-2 かくれんぼ出張開催
   h4.mb-5
     div スポーツかくれんぼを活用して
