@@ -1,7 +1,6 @@
 <template lang="pug">
 div
-  .hero.mb-16
-    | スポかくとは？
+  parts-hero(title="スポかくとは？")
   v-container
     v-row.mb-16
       v-col(cols="6")
@@ -57,11 +56,15 @@ div
 import { Vue, Component } from "nuxt-property-decorator"
 
 @Component
-export default class TopPage extends Vue {
-}
+export default class AboutPage extends Vue {}
 </script>
 
 <style lang="sass" scoped>
+.hero
+  width: 100%
+  padding: 100px 0
+  text-align: center
+  background-color: #f4f4f4
 .description
   font-size: 14px
   letter-spacing: 3px
