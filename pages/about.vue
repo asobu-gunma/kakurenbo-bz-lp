@@ -60,11 +60,6 @@ export default class AboutPage extends Vue {}
 </script>
 
 <style lang="sass" scoped>
-.hero
-  width: 100%
-  padding: 100px 0
-  text-align: center
-  background-color: #f4f4f4
 .description
   font-size: 14px
   letter-spacing: 3px
@@ -77,7 +72,4 @@ export default class AboutPage extends Vue {}
   width: 100%
   height: 100%
   background-color: #f4f4f4
-</style>
-
-<style lang="sass">
 </style>
