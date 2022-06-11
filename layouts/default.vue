@@ -23,7 +23,7 @@ export default class DefaultLayout extends Vue {
     { text: 'スポかくとは？', url: '/about' },
     { text: 'ニュース', url: '/news' },
     { text: 'サービス', url: '/service' },
-    { text: '運営者情報', url: '' },
+    { text: '運営者情報', url: '/organization' },
     { text: 'お問い合わせ', url: '' },
     { text: 'ブログ', url: 'https://www.kakurenbo.club/blog', external: true },
   ]
