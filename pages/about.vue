@@ -60,14 +60,11 @@ export default class AboutPage extends Vue {}
 </script>
 
 <style lang="sass" scoped>
-.description
-  font-size: 14px
-  letter-spacing: 3px
 .rule
   font-size: 14px
   letter-spacing: 3px
   li
-    margin-bottom: 0.5rem
+    margin-bottom: 0.75rem
 .rule-book
   width: 100%
   height: 100%
