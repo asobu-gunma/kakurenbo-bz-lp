@@ -3,12 +3,12 @@ div
   parts-hero(title="サービス")
   v-container
     section.text-center.mb-16
-      h2.section-title.mb-5 かくれんぼ出張開催
+      h2.section-title.mb-8 かくれんぼ出張開催
       .description
         div ご要望・目的に応じて「スポーツかくれんぼ」を出張開催いたします。
         div 楽しさをベースに、様々な課題解決のお手伝いをいたします。
     section.mb-16
-      h2.section-title.text-center.mb-5 特徴
+      h2.section-title.text-center.mb-8 特徴
       v-row.mb-3
         v-col(cols="6")
           .insert-image
@@ -44,39 +44,42 @@ div
               | 年齢・性別・国籍に関係なく誰もが楽しむことができます。世代が離れていても、
               | 同じフィールド、同じルールで楽しむことができるので、世代間のコミュニケーションに課題がある企業にはもってこいです。
     section.mb-16
-      h2.section-title.text-center.mb-5 イベント当日の流れ
+      h2.section-title.text-center.mb-8 イベント当日の流れ
       .d-flex
         v-card.step-card
           v-card-text
-            .step-title.mb-3
-              v-chip.me-3(color="teal" dark) 1
-              span.body-1.font-weight-bold.me-3 オープニング
+            .d-flex.align-center
+              v-chip.me-3(color="amber") 1
+              span.body-1.font-weight-bold.me-3.text--primary オープニング
               span.caption 所要時間: 15分
-            .step-description
-              | 運営スタッフ主導のもの開催の挨拶、ルール説明を行います。
-              | 怪我防止のため、準備運動も行います。
-        v-icon(large) mdi-chevron-right
+          .insert-image
+          v-card-text.text--primary
+            | 運営スタッフ主導のもの開催の挨拶、ルール説明を行います。
+            | 怪我防止のため、準備運動も行います。
+        v-icon(x-large) mdi-chevron-right
         v-card.step-card
           v-card-text
-            .step-title.mb-3
-              v-chip.me-3(color="teal" dark) 2
-              span.body-1.font-weight-bold.me-3 かくれんぼ実施
+            .d-flex.align-center
+              v-chip.me-3(color="amber") 2
+              span.body-1.font-weight-bold.me-3.text--primary かくれんぼ実施
               span.caption 所要時間: 60~120分
-            .step-description
-              | チームに分かれてかくれんぼを実施します。
-              | 1チームあたり2〜3セットのかくれんぼを体験する中で
-              | チーム内の結束を高めていただきます。
-        v-icon(large) mdi-chevron-right
+          .insert-image
+          v-card-text.text--primary
+            | チームに分かれてかくれんぼを実施します。
+            | 1チームあたり2〜3セットのかくれんぼを体験する中で
+            | チーム内の結束を高めていただきます。
+        v-icon(x-large) mdi-chevron-right
         v-card.step-card
           v-card-text
-            .step-title.mb-3
-              v-chip.me-3(color="teal" dark) 3
-              span.body-1.font-weight-bold.me-3 クロージング
+            .d-flex.align-center
+              v-chip.me-3(color="amber") 3
+              span.body-1.font-weight-bold.me-3.text--primary クロージング
               span.caption 所要時間: 15分
-            .step-description
-              | 優勝チームの発表、表彰を行います。
-              | 閉会の挨拶を行い、イベントは終了となります。
-              | 終了後の記念撮影なども承っています。
+          .insert-image
+          v-card-text.text--primary
+            | 優勝チームの発表、表彰を行います。
+            | 閉会の挨拶を行い、イベントは終了となります。
+            | 終了後の記念撮影なども承っています。
     section.mb-16
       h2.section-title.text-center 料金
       .fee.text-center.mb-5
@@ -99,42 +102,45 @@ div
           li イベント保険料
           li スタッフ交通費・宿泊費
     section.mb-16
-      h2.section-title.text-center.mb-5 お申込みから開催までの流れ
+      h2.section-title.text-center.mb-8 お申込みから開催までの流れ
       .d-flex
         v-card.step-card
           v-card-text
-            .step-title.mb-3
-              v-chip.me-3(color="teal" dark) 1
-              span.body-1.font-weight-bold.me-3 ヒアリング・提案
+            .d-flex.align-center
+              v-chip.me-3(color="amber") 1
+              span.body-1.font-weight-bold.me-3.text--primary ヒアリング・提案
               span.caption 開催1〜2ヶ月前
-            .step-description
-              | 目的やご要望をヒアリングし、最適な開催形式を
-              | ご提案いたします。ご提案については無理な営業は行わず
-              | 双方が納得行く形の内容をご提示いたします。
-        v-icon(large) mdi-chevron-right
+          .insert-image
+          v-card-text.text--primary
+            | 目的やご要望をヒアリングし、最適な開催形式を
+            | ご提案いたします。ご提案については無理な営業は行わず
+            | 双方が納得行く形の内容をご提示いたします。
+        v-icon(x-large) mdi-chevron-right
         v-card.step-card
           v-card-text
-            .step-title.mb-3
-              v-chip.me-3(color="teal" dark) 2
-              span.body-1.font-weight-bold.me-3 準備・打ち合わせ
+            .d-flex.align-center
+              v-chip.me-3(color="amber") 2
+              span.body-1.font-weight-bold.me-3.text--primary 準備・打ち合わせ
               span.caption 開催1ヶ月〜1週間前
-            .step-description
-              | お申込み後、イベント開催のスケジュールから逆算し
-              | 準備を開始いたします。必要に応じて適宜打ち合わせを
-              | 行い、当日に向けた詰めを行います。
-        v-icon(large) mdi-chevron-right
+          .insert-image
+          v-card-text.text--primary
+            | お申込み後、イベント開催のスケジュールから逆算し
+            | 準備を開始いたします。必要に応じて適宜打ち合わせを
+            | 行い、当日に向けた詰めを行います。
+        v-icon(x-large) mdi-chevron-right
         v-card.step-card
           v-card-text
-            .step-title.mb-3
-              v-chip.me-3(color="teal" dark) 3
-              span.body-1.font-weight-bold.me-3 イベント開催
+            .d-flex.align-center
+              v-chip.me-3(color="amber") 3
+              span.body-1.font-weight-bold.me-3.text--primary イベント開催
               span.caption 当日
-            .step-description
-              | 幹事さま、運営スタッフにて、参加者の準備が
-              | 整ったことを確認し、イベントを開催します。
-              | 当日の進行は基本的には運営スタッフが行います。
+          .insert-image
+          v-card-text.text--primary
+            | 幹事さま、運営スタッフにて、参加者の準備が
+            | 整ったことを確認し、イベントを開催します。
+            | 当日の進行は基本的には運営スタッフが行います。
     section.mb-16
-      h2.section-title.text-center.mb-5 かくれんぼの活用シーン例
+      h2.section-title.text-center.mb-8 かくれんぼの活用シーン例
       v-row.mb-2
         v-col(cols="4")
           parts-service-card(
@@ -176,7 +182,13 @@ div
     h2.mb-5
       div 童心に返ってワクワクを体験したい方
       div まずはご相談ください。
-    v-btn(tile depressed x-large color="grey")
+    v-btn(
+      x-large
+      color="amber"
+      link
+      nuxt
+      to="/contact"
+    )
       .font-weight-bold ご相談はこちらから！
   parts-contact-btn
 </template>
@@ -199,7 +211,7 @@ export default class ServicePage extends Vue {}
 .description
   font-size: 16px
   letter-spacing: 3px
-  line-height: 1.8
+  line-height: 2
 .step-card
   width: 100%
 .fee
