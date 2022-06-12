@@ -1,8 +1,7 @@
 <template lang="pug">
 v-btn(
   :value="category"
-  tile
-  depressed
+  active-class="active-category"
   block
   x-large
 ) {{ category}}
@@ -19,4 +18,8 @@ export default class PartsNewsCategory extends Vue {
 </script>
 
 <style lang="sass">
+.active-category
+  background-color: #FFC107 !important
+  &::before
+    opacity: 0 !important
 </style>
