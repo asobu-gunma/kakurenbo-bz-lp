@@ -1,5 +1,5 @@
 <template lang="pug">
-v-app-bar(app flat)
+v-app-bar(app flat color="amber")
   n-link.logo.px-3(to="/")
     img(src="~/assets/images/logo-short.svg")
   v-spacer

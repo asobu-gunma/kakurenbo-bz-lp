@@ -1,8 +1,5 @@
 <template lang="pug">
-v-card.text-center.border-bold(
-  tile
-  outlined
-)
+v-card.text-center
   v-card-text.title.font-weight-bold.text--primary {{ title }}
   .insert-image
   v-card-text.caption.text--primary

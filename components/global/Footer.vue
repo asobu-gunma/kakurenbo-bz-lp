@@ -1,11 +1,12 @@
 <template lang="pug">
 v-footer(dark padless)
   v-card.flex(flat tile)
-    v-card-text.teal.text-center.pb-0
+    v-card-text.amber.text-center.pb-0
       v-btn(
         v-for="item in navItems"
         :key="item.text"
         text
+        light
         link
         :nuxt="!item.external"
         :to="item.external ? '' : item.url"
@@ -18,11 +19,12 @@ v-footer(dark padless)
           v-if="item.external"
           dense
         ) mdi-open-in-new
-    v-card-text.teal.text-center
+    v-card-text.amber.text-center
       v-btn(
         v-for="icon in navIcons"
         :key="icon.name"
         icon
+        color="black"
         x-large
         link
         :href="icon.url"

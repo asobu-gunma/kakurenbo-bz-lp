@@ -15,7 +15,7 @@ section#about
           | 下は4歳から上は60代まで、老若男女別け隔てなく同じフィールド、同じルールで楽しめる
           | ボーダレスなスポーツとして、発祥の地、群馬県を中心に、世界への展開を見据え
           | 日夜活動をしています。
-      parts-cta-btn ルールを知りたい方はこちらから！
+      parts-cta-btn(url="/about") ルールを知りたい方はこちらから！
 </template>
 
 <script lang="ts">
@@ -26,7 +26,4 @@ export default class TopAbout extends Vue {}
 </script>
 
 <style lang="sass" scoped>
-.description
-  font-size: 14px
-  letter-spacing: 3px
 </style>

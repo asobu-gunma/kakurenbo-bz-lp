@@ -31,11 +31,14 @@ export default class DefaultLayout extends Vue {
 </script>
 
 <style lang="sass">
+body
+  font-family: "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif 
 .insert-image
   width: 100%
   padding-top: 60%
   background-color: #f4f4f4
-.border-bold
-  border-color: black !important
-  border-width: 3px !important
+.description
+  font-size: 14px
+  line-height: 2
+  letter-spacing: 3px
 </style>

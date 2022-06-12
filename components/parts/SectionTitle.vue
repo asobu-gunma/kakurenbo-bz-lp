@@ -1,6 +1,6 @@
 <template lang="pug">
 h2
-  span.me-3 {{ main }}
+  span.font-weight-black.me-3 {{ main }}
   span.body-2.font-weight-bold {{ sub }}
 </template>
 

@@ -1,8 +1,6 @@
 <template lang="pug">
-v-btn.border-bold.mb-3(
+v-btn.mb-3(
   block
-  tile
-  outlined
   height="60px"
   :nuxt="!news.external"
   :to="news.external ? '' : news.url"
