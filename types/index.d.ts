@@ -17,3 +17,9 @@ export interface News {
   url: string
   external: boolean
 }
+
+export interface Member {
+  id: number
+  name: string
+  title: string
+}
