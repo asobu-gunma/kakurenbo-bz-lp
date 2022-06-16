@@ -11,7 +11,7 @@ div
       h2.section-title.text-center.mb-8 特徴
       v-row.mb-3
         v-col(cols="6")
-          .insert-image
+          .insert-image(:style="{'background-image': `url(${require('~/assets/images/feature_enjoy.jpg')})`}")
         v-col(cols="6")
           h3.point.mb-2
             div やれば楽しい、気づけば夢中！
@@ -23,7 +23,7 @@ div
               | 勝ち負けもありますが、シンプルに楽しいという「体験の共有」を味わうことができます。
       v-row.mb-3
         v-col(cols="6")
-          .insert-image
+          .insert-image(:style="{'background-image': `url(${require('~/assets/images/feature_team_building.jpg')})`}")
         v-col(cols="6")
           h3.point.mb-2
             div チームビルディングを体感！
@@ -34,7 +34,7 @@ div
               | その結果を振り返り、次のゲームに向けて新たに作戦を立てる。かくれんぼの中でPDCAを回すことができます。
       v-row.mb-3
         v-col(cols="6")
-          .insert-image
+          .insert-image(:style="{'background-image': `url(${require('~/assets/images/feature_noborder.jpg')})`}")
         v-col(cols="6")
           h3.point.mb-2
             div 年齢・性別・国籍関係なし！
@@ -52,7 +52,7 @@ div
               v-chip.me-3(color="amber") 1
               span.body-1.font-weight-bold.me-3.text--primary オープニング
               span.caption 所要時間: 15分
-          .insert-image
+          .insert-image(:style="{'background-image': `url(${require('~/assets/images/game_flow_opening.jpg')})`}")
           v-card-text.text--primary
             | 運営スタッフ主導のもの開催の挨拶、ルール説明を行います。
             | 怪我防止のため、準備運動も行います。
@@ -63,7 +63,7 @@ div
               v-chip.me-3(color="amber") 2
               span.body-1.font-weight-bold.me-3.text--primary かくれんぼ実施
               span.caption 所要時間: 60~120分
-          .insert-image
+          .insert-image(:style="{'background-image': `url(${require('~/assets/images/game_flow_playing.jpg')})`}")
           v-card-text.text--primary
             | チームに分かれてかくれんぼを実施します。
             | 1チームあたり2〜3セットのかくれんぼを体験する中で
@@ -75,7 +75,7 @@ div
               v-chip.me-3(color="amber") 3
               span.body-1.font-weight-bold.me-3.text--primary クロージング
               span.caption 所要時間: 15分
-          .insert-image
+          .insert-image(:style="{'background-image': `url(${require('~/assets/images/game_flow_closing.jpg')})`}")
           v-card-text.text--primary
             | 優勝チームの発表、表彰を行います。
             | 閉会の挨拶を行い、イベントは終了となります。
@@ -110,7 +110,7 @@ div
               v-chip.me-3(color="amber") 1
               span.body-1.font-weight-bold.me-3.text--primary ヒアリング・提案
               span.caption 開催1〜2ヶ月前
-          .insert-image
+          .insert-image(:style="{'background-image': `url(${require('~/assets/images/event_flow_meeting.jpg')})`}")
           v-card-text.text--primary
             | 目的やご要望をヒアリングし、最適な開催形式を
             | ご提案いたします。ご提案については無理な営業は行わず
@@ -122,7 +122,7 @@ div
               v-chip.me-3(color="amber") 2
               span.body-1.font-weight-bold.me-3.text--primary 準備・打ち合わせ
               span.caption 開催1ヶ月〜1週間前
-          .insert-image
+          .insert-image(:style="{'background-image': `url(${require('~/assets/images/event_flow_prepare.jpg')})`}")
           v-card-text.text--primary
             | お申込み後、イベント開催のスケジュールから逆算し
             | 準備を開始いたします。必要に応じて適宜打ち合わせを
@@ -134,7 +134,7 @@ div
               v-chip.me-3(color="amber") 3
               span.body-1.font-weight-bold.me-3.text--primary イベント開催
               span.caption 当日
-          .insert-image
+          .insert-image(:style="{'background-image': `url(${require('~/assets/images/event_flow_start.jpg')})`}")
           v-card-text.text--primary
             | 幹事さま、運営スタッフにて、参加者の準備が
             | 整ったことを確認し、イベントを開催します。

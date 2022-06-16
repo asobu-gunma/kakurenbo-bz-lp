@@ -37,6 +37,8 @@ body
   width: 100%
   padding-top: 60%
   background-color: #f4f4f4
+  background-position: center center
+  background-size: cover
 .description
   font-size: 14px
   line-height: 2
