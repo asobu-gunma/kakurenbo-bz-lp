@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.19.3",
+    "mailgun.js": "^7.0.2",
     "nuxt": "^2.15.8",
     "nuxt-property-decorator": "^2.9.1",
     "vue": "^2.6.14",

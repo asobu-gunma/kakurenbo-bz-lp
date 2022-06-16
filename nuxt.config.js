@@ -1,3 +1,8 @@
+const host = "spokaku.com"
+const domain = `www.${host}`
+const mailHost = "kakurenbo.club"
+const projectName = "スポかく"
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -18,13 +23,20 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
+  env: {
+    mailgunKey: process.env.MAILGUN_KEY,
+    host,
+    domain,
+    mailHost,
+    projectName,
+  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/mailgun.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

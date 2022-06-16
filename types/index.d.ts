@@ -23,3 +23,14 @@ export interface Member {
   name: string
   title: string
 }
+
+export interface Contact {
+  state: string
+  category: string
+  name: string
+  email: string
+  tel: string
+  organization: string
+  requests: string[]
+  message: string
+}

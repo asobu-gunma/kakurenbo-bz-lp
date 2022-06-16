@@ -3,83 +3,90 @@ div
   parts-hero(title="お問い合わせ")
   v-container
     section.mb-16
-      .desctiption.text-center.font-weight-bold.mb-10
-        div メールでのお問い合わせは下記のフォームより
-        div 必要項目をご入力の上お問い合わせください
       v-row(no-gutters)
         v-col(offset="3" cols="6")
-          v-form
-            .d-flex.body-1.font-weight-bold.mb-2
-              .me-2 お問い合わせの種別をお選びください
-              v-chip(small label) 必須
+          v-form(v-if="formInput.state === 'input'")
+            .desctiption.text-center.font-weight-bold.mb-10
+              div メールでのお問い合わせは下記のフォームより
+              div 必要項目をご入力の上お問い合わせください
+            parts-input-label(
+              text="お問い合わせの種別をお選びください"
+              :required="true"
+            )
             v-select(
+              v-model="formInput.category"
+              outlined
+              dense
+              required
+              :items="categoryList"
+            )
+            parts-input-label(
+              text="お名前"
+              :required="true"
+            )
+            v-text-field(
+              v-model="formInput.name"
               outlined
               dense
               required
             )
-            .d-flex.body-1.font-weight-bold.mb-2
-              .me-2 お名前
-              v-chip(small label) 必須
-            v-text-field(
-              outlined
-              dense
-              required
+            parts-input-label(
+              text="メールアドレス"
+              :required="true"
             )
-            .d-flex.body-1.font-weight-bold.mb-2
-              .me-2 メールアドレス
-              v-chip(small label) 必須
             v-text-field(
+              v-model="formInput.email"
               outlined
               dense
               type="email"
               required
             )
-            .d-flex.body-1.font-weight-bold.mb-2 電話番号
+            parts-input-label(
+              text="電話番号"
+            )
             v-text-field(
+              v-model="formInput.tel"
               outlined
               dense
               type="tel"
             )
-            .d-flex.body-1.font-weight-bold.mb-2
-              .me-2 団体名
-              v-chip(small label) 必須
-            v-text-field(
-              outlined
-              dense
-              required
+            template(v-if="formInput.category !== 'other'")
+              parts-input-label(
+                text="企業 / 団体名"
+                :required="true"
+              )
+              v-text-field(
+                v-model="formInput.organization"
+                outlined
+                dense
+                required
+              )
+            template(v-if="formInput.category === 'client'")
+              parts-input-label(
+                text="ご依頼内容をお選びください（複数選択可）"
+                :required="true"
+              )
+              v-row.mb-5
+                v-col(
+                  v-for="request in requestList"
+                  :key="request"
+                  cols="3"
+                )
+                  v-checkbox(
+                    v-model="formInput.requests"
+                    hide-details
+                    :value="request"
+                    :label="request"
+                  )
+            parts-input-label(
+              text="ご質問 / ご要望 / メッセージがあればご入力ください"
+              :required="formInput.category !== 'client'"
             )
-            .d-flex.body-1.font-weight-bold.mb-2
-              .me-2 ご依頼内容をお選びください（複数選択可）
-              v-chip(small label) 必須
-            v-row.mb-5
-              v-col(cols="3")
-                v-checkbox(
-                  hide-details
-                  value="資料請求"
-                  label="資料請求"
-                )
-              v-col(cols="3")
-                v-checkbox(
-                  hide-details
-                  value="打ち合わせ"
-                  label="打ち合わせ"
-                )
-              v-col(cols="3")
-                v-checkbox(
-                  hide-details
-                  value="見積もり"
-                  label="見積もり"
-                )
-              v-col(cols="3")
-                v-checkbox(
-                  hide-details
-                  value="その他"
-                  label="その他"
-                )
-            .d-flex.body-1.font-weight-bold.mb-2 質問 / 要望 / メッセージがあればご入力ください
             v-textarea(
+              v-model="formInput.message"
               outlined
               rows="5"
+              :required="formInput.category !== 'client'"
             )
             .caption.mb-8
               div ＜お問い合わせへのご回答について＞
@@ -88,30 +95,204 @@ div
                 li 内容を確認しまして、当日以降にご回答させていただきますので今しばらくお待ち下さい。
             .text-center
               v-btn(
-                depressed
                 large
-              ) 上記の内容で送信する
+                color="amber"
+                @click="formInput.state = 'confirm'"
+              ) 送信内容を確認する
+          template(v-if="formInput.state === 'confirm'")
+            .desctiption.text-center.font-weight-bold.mb-10
+              div 下記の内容でお問い合わせ受け付けます。
+              div 問題がないかご確認くださいませ。
+            parts-input-label(text="お問い合わせ種別")
+            .mb-5 {{ selectedCategoryText }}
+            parts-input-label(text="お名前")
+            .mb-5 {{ formInput.name }}
+            parts-input-label(text="メールアドレス")
+            .mb-5 {{ formInput.email }}
+            parts-input-label(text="電話番号")
+            .mb-5 {{ formInput.tel || '-' }}
+            template(v-if="formInput.category !== 'other'")
+              parts-input-label(text="企業 / 団体名")
+              .mb-5 {{ formInput.organization }}
+            template(v-if="formInput.category === 'client'")
+              parts-input-label(text="ご依頼内容")
+              .mb-5 {{ formInput.requests.join("、") }}
+            parts-input-label(text="ご質問 / ご要望 / メッセージ")
+            .mb-10
+              pre {{ formInput.message }}
+            .text-center
+              v-btn.me-3(
+                large
+                @click="formInput.state = 'input'"
+              ) 入力画面に戻る
+              v-btn(
+                large
+                color="amber"
+                @click="sendMail"
+              ) こちらの内容で送信する
+          template(v-if="formInput.state === 'complete'")
+            .desctiption.text-center.font-weight-bold.mb-10
+              div お問い合わせを受け付けました。
+              div 数日以内にご連絡いたしますので少々お待ち下さい。
+            .text-center
+              v-btn(
+                large
+                color="amber"
+                nuxt
+                link
+                to="/"
+              ) トップページへ戻る
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator"
+import { Contact } from "~/types";
 
 @Component
-export default class ContactPage extends Vue {}
+export default class ContactPage extends Vue {
+  categoryList: any = [
+    {
+      text: 'かくれんぼ出張開催のご利用をご検討されている方',
+      value: 'client',
+    },
+    {
+      text: 'プレス・メディアの方',
+      value: 'media',
+    },
+    {
+      text: 'その他のお問い合わせの方',
+      value: 'other',
+    }
+  ]
+  requestList: string[] = [
+    '資料請求',
+    '打ち合わせ',
+    '見積もり',
+    'その他',
+  ]
+
+  formInput: Contact = {
+    state: 'input',
+    category: 'client',
+    name: '',
+    email: '',
+    tel: '',
+    organization: '',
+    requests: [],
+    message: ''
+  }
+
+  async sendMail() {
+    const {
+      category,
+      name,
+      email,
+      tel,
+      organization,
+      requests,
+      message,
+    } = this.formInput
+    const bodyFirst: string = `
+以下の内容でホームページよりお問い合わせを受け付けました。
+必要に応じて担当から折り返しますので今しばらくお待ち下さい。
+
+---
+# お問い合わせ種別
+${this.selectedCategoryText}
+
+# お名前
+${name} 様
+
+# 連絡先
+${email}
+
+# 電話番号
+${tel || '-'}
+
+`
+    const bodyOrg: string = `
+# 企業 / 団体名
+${organization}
+
+`
+    const bodyReq: string = `
+# ご依頼内容
+${requests.join('、')}
+
+`
+    const bodyLast: string = `
+# ご質問 / ご要望 / メッセージ
+${message}
+---
+
+引き続き${process.env.projectName}をよろしくおねがいします！
+
+※ コチラのメールへの返信は受け付けておりません。
+
+====================================
+
+# スポーツかくれんぼ 公式サイト
+https://www.spokaku.com
+
+# かくれんぼ in ぐんま 公式サイト
+https://www.kakurenbo.club
+
+# Facebookグループ「かくれんぼの裏側」
+https://www.facebook.com/groups/705675266823073
+
+====================================
+`
+    let body: string
+    switch(category) {
+      case 'client':
+        body = bodyFirst + bodyOrg + bodyReq + bodyLast
+        break
+      case 'media':
+        body = bodyFirst + bodyOrg + bodyLast
+        break
+      case 'other':
+        body = bodyFirst + bodyLast
+        break
+      default:
+        body = ''
+    }
+    const mailOption: any = {
+      from: `${process.env.projectName} お問合せフォーム <info@${process.env.mailHost}>`,
+      to: [email],
+      bcc: ['toyokawa@kakurenbo.club'],
+      subject: `【${process.env.projectName}】お問い合わせを受け付けました`,
+      text: body
+    }
+    // @ts-ignore
+    await this.$mgClient.messages.create(
+      `mg.${process.env.mailHost}`,
+      mailOption
+    ).catch((err: any) => {
+      console.log(err)
+      throw err
+    })
+    this.completeForm()
+  }
+
+  completeForm() {
+    this.formInput = {
+      state: "complete",
+      category: "client",
+      name: "",
+      email: "",
+      tel: "",
+      organization: "",
+      requests: [],
+      message: "",
+    }
+  }
+
+  get selectedCategoryText(): string {
+    return this.categoryList.find((category: any) => category.value === this.formInput.category).text
+  }
+}
 </script>
 
 <style lang="sass" scoped>
-.description
-  font-size: 14px
-  letter-spacing: 3px
-.rule
-  font-size: 14px
-  letter-spacing: 3px
-  li
-    margin-bottom: 0.5rem
-.rule-book
-  width: 100%
-  height: 100%
-  background-color: #f4f4f4
 </style>
 
