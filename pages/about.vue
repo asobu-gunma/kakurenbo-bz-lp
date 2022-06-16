@@ -48,7 +48,11 @@ div
           li ゲーム終了後に得点が一番多い人が勝利となる。
         parts-cta-btn 公式ルールブックのダウンロードはこちら！
       v-col(cols="5")
-        .rule-book
+        img.rule-book(
+          src="~/assets/images/rule_book.png"
+          alt="公式ルールブック"
+        )
+        .caption.text-right.text--grey 公式ルールブック
   parts-contact-btn
 </template>
 
@@ -67,6 +71,5 @@ export default class AboutPage extends Vue {}
     margin-bottom: 0.75rem
 .rule-book
   width: 100%
-  height: 100%
-  background-color: #f4f4f4
+  height: auto
 </style>
