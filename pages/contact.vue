@@ -5,89 +5,111 @@ div
     section.mb-16
       v-row(no-gutters)
         v-col(offset="3" cols="6")
-          v-form(v-if="formInput.state === 'input'")
+          v-form(
+            v-if="formInput.state === 'input'"
+            v-model="valid"
+          )
             .desctiption.text-center.font-weight-bold.mb-10
               div メールでのお問い合わせは下記のフォームより
               div 必要項目をご入力の上お問い合わせください
-            parts-input-label(
-              text="お問い合わせの種別をお選びください"
-              :required="true"
-            )
-            v-select(
-              v-model="formInput.category"
-              outlined
-              dense
-              required
-              :items="categoryList"
-            )
-            parts-input-label(
-              text="お名前"
-              :required="true"
-            )
-            v-text-field(
-              v-model="formInput.name"
-              outlined
-              dense
-              required
-            )
-            parts-input-label(
-              text="メールアドレス"
-              :required="true"
-            )
-            v-text-field(
-              v-model="formInput.email"
-              outlined
-              dense
-              type="email"
-              required
-            )
-            parts-input-label(
-              text="電話番号"
-            )
-            v-text-field(
-              v-model="formInput.tel"
-              outlined
-              dense
-              type="tel"
-            )
-            template(v-if="formInput.category !== 'other'")
+            .mb-5
               parts-input-label(
-                text="企業 / 団体名"
+                text="お問い合わせの種別をお選びください"
                 :required="true"
               )
-              v-text-field(
-                v-model="formInput.organization"
+              v-select(
+                v-model="formInput.category"
                 outlined
                 dense
                 required
+                hide-details="auto"
+                :items="categoryList"
+                :rules="[validates.required]"
               )
-            template(v-if="formInput.category === 'client'")
+            .mb-5
               parts-input-label(
-                text="ご依頼内容をお選びください（複数選択可）"
+                text="お名前"
                 :required="true"
               )
-              v-row.mb-5
-                v-col(
-                  v-for="request in requestList"
-                  :key="request"
-                  cols="3"
+              v-text-field(
+                v-model="formInput.name"
+                outlined
+                dense
+                required
+                hide-details="auto"
+                :rules="[validates.required]"
+              )
+            .mb-5
+              parts-input-label(
+                text="メールアドレス"
+                :required="true"
+              )
+              v-text-field(
+                v-model="formInput.email"
+                outlined
+                dense
+                type="email"
+                required
+                hide-details="auto"
+                :rules="[validates.required, validates.email]"
+              )
+            .mb-5
+              parts-input-label(
+                text="電話番号"
+              )
+              v-text-field(
+                v-model="formInput.tel"
+                outlined
+                dense
+                type="tel"
+                hide-details="auto"
+              )
+            template(v-if="formInput.category !== 'other'")
+              .mb-5
+                parts-input-label(
+                  text="企業 / 団体名"
+                  :required="true"
                 )
-                  v-checkbox(
-                    v-model="formInput.requests"
-                    hide-details
-                    :value="request"
-                    :label="request"
+                v-text-field(
+                  v-model="formInput.organization"
+                  outlined
+                  dense
+                  required
+                  hide-details="auto"
+                  :rules="[validates.required]"
+                )
+            template(v-if="formInput.category === 'client'")
+              .mb-5
+                parts-input-label(
+                  text="ご依頼内容をお選びください（複数選択可）"
+                  :required="true"
+                )
+                v-row
+                  v-col(
+                    v-for="(request, index) in requestList"
+                    :key="request"
+                    cols="3"
                   )
-            parts-input-label(
-              text="ご質問 / ご要望 / メッセージがあればご入力ください"
-              :required="formInput.category !== 'client'"
-            )
-            v-textarea(
-              v-model="formInput.message"
-              outlined
-              rows="5"
-              :required="formInput.category !== 'client'"
-            )
+                    v-checkbox(
+                      v-model="formInput.requests"
+                      :hide-details="index > 0"
+                      :value="request"
+                      :label="request"
+                      :rules="[validates.checked]"
+                    )
+            .mb-5
+              parts-input-label(
+                text="ご質問 / ご要望 / メッセージがあればご入力ください"
+                :required="formInput.category !== 'client'"
+              )
+              v-textarea(
+                v-model="formInput.message"
+                outlined
+                rows="5"
+                :required="formInput.category !== 'client'"
+                hide-details="auto"
+                :rules="[formInput.category !== 'client' ? validates.required : true]"
+              )
             .caption.mb-8
               div ＜お問い合わせへのご回答について＞
               ul
@@ -98,6 +120,7 @@ div
                 large
                 color="amber"
                 @click="formInput.state = 'confirm'"
+                :disabled="!valid"
               ) 送信内容を確認する
           template(v-if="formInput.state === 'confirm'")
             .desctiption.text-center.font-weight-bold.mb-10
@@ -180,6 +203,15 @@ export default class ContactPage extends Vue {
     organization: '',
     requests: [],
     message: ''
+  }
+  valid = true
+  validates = {
+    required: (value: string): boolean | string => !!value || "入力してください",
+    checked: (value: string[]): boolean | string => value.length > 0 || "選択してください",
+    email: (value: string): boolean | string => {
+      const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      return pattern.test(value) || "正しく入力してください"
+    }
   }
 
   async sendMail() {
