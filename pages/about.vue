@@ -19,7 +19,7 @@ div
             | 日常茶飯事。そんなこともあり大人も子供も同じルール、同じフィールドで楽しめる
             | ことからボーダレス（境なく誰でも参加できる）なスポーツと呼んでいます。
       v-col(cols="6")
-        .insert-image
+        parts-youtube(id="C6BzQU4_5AE")
     parts-section-title.mb-2(
       main="RULE"
       sub="公式ルール"

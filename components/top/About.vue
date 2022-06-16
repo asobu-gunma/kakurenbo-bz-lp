@@ -2,7 +2,7 @@
 section#about
   v-row
     v-col(cols="6" order="2" lg)
-      .insert-image
+      parts-youtube(id="fC7VVOvB5Pw")
     v-col(cols="6" order="1" lg)
       h2.mb-2 スポかくとは？
       .description
