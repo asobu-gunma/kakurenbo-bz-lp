@@ -124,8 +124,8 @@ div
               ) 送信内容を確認する
           template(v-if="formInput.state === 'confirm'")
             .desctiption.text-center.font-weight-bold.mb-10
-              div 下記の内容でお問い合わせ受け付けます。
-              div 問題がないかご確認くださいませ。
+              div 下記の内容で問題がないか
+              div ご確認ください
             parts-input-label(text="お問い合わせ種別")
             .mb-5 {{ selectedCategoryText }}
             parts-input-label(text="お名前")
@@ -155,8 +155,8 @@ div
               ) こちらの内容で送信する
           template(v-if="formInput.state === 'complete'")
             .desctiption.text-center.font-weight-bold.mb-10
-              div お問い合わせを受け付けました。
-              div 数日以内にご連絡いたしますので少々お待ち下さい。
+              div お問い合わせを受け付けました
+              div 数日以内にご連絡いたしますので少々お待ち下さい
             .text-center
               v-btn(
                 large
