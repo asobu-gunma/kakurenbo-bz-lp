@@ -56,7 +56,11 @@ section#event
       template(v-else)
         h2.mb-3 直近開催予定のイベントはありません
         .description 開催予定が決まり次第随時更新いたします。
-  parts-cta-btn(v-if="!!event") かくれんぼへの参加申込はこちらから！
+  parts-cta-btn(
+    v-if="!!event"
+    url="https://www.kakurenbo.club/event"
+    external
+  ) かくれんぼへの参加申込はこちらから！
 </template>
 
 <script lang="ts">

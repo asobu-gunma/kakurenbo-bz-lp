@@ -50,7 +50,10 @@ div
           li 子は拠点にタッチすると+3点する。
           li 鬼は制限時間内に全員を見つけることができた場合、ボーナスポイントとして残り時間の分数 + 1点獲得する。
           li ゲーム終了後に得点が一番多い人が勝利となる。
-        parts-cta-btn 公式ルールブックのダウンロードはこちら！
+        parts-cta-btn(
+          url="https://www.kakurenbo.club/rule_book.pdf"
+          external
+        ) 公式ルールブックのダウンロードはこちら！
       v-col(cols="5")
         img.rule-book(
           src="~/assets/images/rule_book.png"
