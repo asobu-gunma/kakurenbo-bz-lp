@@ -24,6 +24,8 @@ export default {
     ]
   },
   env: {
+    ctfSpaceId: process.env.CTF_SPACE_ID,
+    ctfCdaAccessToken: process.env.CTF_CDA_ACCESS_TOKEN,
     mailgunKey: process.env.MAILGUN_KEY,
     host,
     domain,
@@ -36,7 +38,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/mailgun.js'
+    '~/plugins/mailgun.js',
+    '~/plugins/contentful.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -47,6 +50,7 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     '@nuxtjs/vuetify',
+    ['@nuxtjs/date-fns', { locales: ['ja'] }],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

@@ -5,7 +5,7 @@ div
     top-about.mb-16
     top-news.mb-16(:newsList="newsList")
     top-service.mb-16
-    top-event.mb-16
+    top-event.mb-16(:event="event")
   parts-contact-btn
 </template>
 
@@ -13,7 +13,17 @@ div
 import { Vue, Component } from "nuxt-property-decorator"
 import { News } from "~/types"
 
-@Component
+@Component({
+  async asyncData({ app }) {
+    const eventRes = await app.$ctfClient.getEntries({
+      content_type: 'event',
+      order: '-sys.createdAt',
+      limit: 1,
+    })
+    const event = eventRes.items[0]
+    return { event }
+  }
+})
 export default class TopPage extends Vue {
   newsList: News[] = [
     {
