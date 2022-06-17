@@ -19,7 +19,7 @@ export interface News {
 }
 
 export interface Member {
-  id: number
+  position: number
   name: string
   title: string
 }

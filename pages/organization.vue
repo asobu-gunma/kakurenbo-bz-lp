@@ -76,6 +76,7 @@ div
           parts-member-card(
             :name="member.name"
             :title="member.title"
+            :photoUrl="member.photo.fields.file.url"
           )
   parts-contact-btn
 </template>
@@ -85,46 +86,18 @@ import { Vue, Component } from "nuxt-property-decorator"
 import { Member } from "~/types"
 import heroImage from '~/assets/images/header_org.jpg'
 
-@Component
+@Component({
+  async asyncData({ app }) {
+    const memberRes = await app.$ctfClient.getEntries({
+      content_type: 'member',
+      order: 'fields.position',
+    })
+    const memberList: Member[] = memberRes.items.map((item: { fields: Member }) => item.fields)
+    return { memberList }
+  }
+})
 export default class OrganizationPage extends Vue {
   heroImage = heroImage
-  memberList: Member[] = [
-    {
-      id: 1,
-      name: '豊川 雄太',
-      title: '運営代表',
-    },
-    {
-      id: 2,
-      name: '高野 紀幸',
-      title: 'フィールド開発責任者',
-    },
-    {
-      id: 3,
-      name: '請地 直之',
-      title: 'フィールド開発主任',
-    },
-    {
-      id: 4,
-      name: '原田 朋樹',
-      title: 'イベント運営',
-    },
-    {
-      id: 5,
-      name: '高橋 楓',
-      title: 'PRディレクター',
-    },
-    {
-      id: 6,
-      name: '増渕 拓海',
-      title: 'PRメンバー / イベント運営',
-    },
-    {
-      id: 7,
-      name: '大竹 倫平',
-      title: 'PRメンバー / イベント運営',
-    },
-  ]
 }
 </script>
 

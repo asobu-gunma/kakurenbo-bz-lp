@@ -1,6 +1,6 @@
 <template lang="pug">
 v-card
-  .photo
+  img.photo(:src="photoUrl")
   v-card-text.text--primary
     .body-1.font-weight-black {{ name }}
     .caption {{ title }}
@@ -16,12 +16,16 @@ export default class PartsMemberCard extends Vue {
 
   @Prop({ type: String, required: true })
   readonly title!: string
+
+  @Prop({ type: String, required: true })
+  readonly photoUrl!: string
 }
 </script>
 
 <style lang="sass" scoped>
 .photo
   width: 100%
-  padding-bottom: 100%
+  height: 100%
+  object-fit: cover
   background-color: #f4f4f4
 </style>
