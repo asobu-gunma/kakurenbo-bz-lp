@@ -1,7 +1,7 @@
 <template lang="pug">
 v-card.text-center
   v-card-text.title.font-weight-bold.text--primary {{ title }}
-  .insert-image
+  .insert-image(:style="{'background-image': `url(${image})`}")
   v-card-text.caption.text--primary
     div {{ description1 }}
     div {{ description2 }}
@@ -20,5 +20,8 @@ export default class PartsServiceCard extends Vue {
 
   @Prop({ type: String, required: true })
   readonly description2!: string
+
+  @Prop({ type: String, required: true })
+  readonly image!: string
 }
 </script>

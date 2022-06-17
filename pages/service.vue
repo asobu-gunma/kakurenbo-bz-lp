@@ -151,32 +151,35 @@ div
             title="企業研修"
             description1="内定者や親友社員のチーム形成"
             description2="既存社員同士のより強い結束力の醸成に！"
+            :image="sampleTraining"
           )
         v-col(cols="4")
           parts-service-card(
             title="地域活性化"
             description1="地域の人々のつながり造り"
             description2="観光地への集客イベントに！"
+            :image="sampleLocal"
           )
         v-col(cols="4")
           parts-service-card(
             title="商業施設イベント"
             description1="週末や季節ごとの集客"
             description2="来場者の購買促進イベントに！"
+            :image="sampleShop"
           )
-        v-col(cols="4")
+        // v-col(cols="4")
           parts-service-card(
             title="企業・学校イベント"
             description1="企業の懇親会や行事イベント"
             description2="学校の学園祭・体育祭に！"
           )
-        v-col(cols="4")
+        // v-col(cols="4")
           parts-service-card(
             title="労働組合レク"
             description1="組合員同士やご家族を招いた"
             description2="レクリエーションイベントに！"
           )
-        v-col(cols="4")
+        // v-col(cols="4")
           parts-service-card(
             title="企画・PR"
             description1="「かくれんぼ」というキーワードを活用し"
@@ -200,10 +203,16 @@ div
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator"
 import heroImage from '~/assets/images/header_service.jpg'
+import sampleTraining from '~/assets/images/sample_training.jpg'
+import sampleLocal from '~/assets/images/sample_local.jpg'
+import sampleShop from '~/assets/images/sample_shop.jpg'
 
 @Component
 export default class ServicePage extends Vue {
   heroImage = heroImage
+  sampleTraining = sampleTraining
+  sampleLocal = sampleLocal
+  sampleShop = sampleShop
 }
 </script>
 
