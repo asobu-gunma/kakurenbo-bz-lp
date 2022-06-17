@@ -20,7 +20,7 @@ div
         v-col(cols="3")
           parts-news-category(category="event")
     parts-news-post.mb-3(
-      v-for="news in filteredNewsList"
+      v-for="news in newsList"
       :key="news.id"
       :news="news"
     )
@@ -35,49 +35,37 @@ div
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "nuxt-property-decorator"
+import { Vue, Component, Watch } from "nuxt-property-decorator"
 import { News } from "~/types"
 import heroImage from '~/assets/images/header_news.jpg'
 
-@Component
+@Component({
+  async asyncData({ app }) {
+    const newsRes = await app.$ctfClient.getEntries({
+      content_type: 'news',
+      order: '-sys.createdAt',
+    })
+    const newsList: News[] = newsRes.items.map((item: { fields: News }) => item.fields)
+    return { newsList }
+  }
+})
 export default class NewsPage extends Vue {
+  newsList?: News[]
   heroImage = heroImage
   currentCategory: string = 'all'
-  newsList: News[] = [
-    {
-      id: 3,
-      postedAt: '2022.06.09',
-      category: 'event',
-      title: '【7月のかくれんぼ選手権】お申し込み受付中です！',
-      url: '',
-      external: true
-    },
-    {
-      id: 2,
-      postedAt: '2022.06.08',
-      category: 'media',
-      title: 'NHKにてスポーツかくれんぼが特集されました！',
-      url: '',
-      external: true
-    },
-    {
-      id: 1,
-      postedAt: '2022.06.07',
-      category: 'news',
-      title: 'ホームページをリニューアルしました！',
-      url: '',
-      external: false
+
+  @Watch('currentCategory')
+  async selectCategory() {
+    let ctfOption: any = {
+      content_type: 'news',
+      order: '-sys.createdAt',
     }
-  ]
-
-  selectCategory(category: string): void {
-    this.currentCategory = category
-  }
-
-  get filteredNewsList(): News[] {
-    if (this.currentCategory === 'all') return this.newsList
-
-    return this.newsList.filter((news: News) => news.category === this.currentCategory)
+    if (this.currentCategory !== 'all') {
+      ctfOption['fields.category'] = this.currentCategory
+    } 
+    // @ts-ignore
+    const newsRes = await this.$ctfClient.getEntries(ctfOption)
+    this.newsList = newsRes.items.map((item: { fields: News }) => item.fields)
   }
 }
 </script>

@@ -6,7 +6,7 @@ section#news
   )
   parts-news-post(
     v-for="news in newsList"
-    :key="news.id"
+    :key="news.title"
     :news="news"
   )
   parts-cta-btn.mt-2(url="news") 過去のNEWSの一覧はこちらから！

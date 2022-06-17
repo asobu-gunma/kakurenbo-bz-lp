@@ -8,7 +8,7 @@ v-btn.mb-3(
   :target="news.external ? '_blank' : ''"
   :rel="news.external ? 'noopener' : ''"
 )
-  span.body-2.me-5 {{ news.postedAt }}
+  span.body-2.me-5 {{ formattedPostedAt }}
   v-chip.me-5(label small) {{ news.category }}
   span.body-2 {{ news.title }}
   v-spacer
@@ -23,5 +23,10 @@ import { News } from "~/types"
 export default class PartsNewsPost extends Vue {
   @Prop({ type: Object, required: true })
   readonly news!: News
+
+  get formattedPostedAt(): string {
+    // @ts-ignore
+    return this.$dateFns.format(this.news.postedAt, "yyyy.MM.dd")
+  }
 }
 </script>
