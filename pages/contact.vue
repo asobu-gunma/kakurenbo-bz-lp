@@ -1,6 +1,10 @@
 <template lang="pug">
 div
-  parts-hero(title="お問い合わせ")
+  parts-hero(
+    title="Contact Us"
+    subtitle="お問い合わせ"
+    :image="heroImage"
+  )
   v-container
     section.mb-16
       v-row(no-gutters)
@@ -170,9 +174,11 @@ div
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator"
 import { Contact } from "~/types";
+import heroImage from '~/assets/images/header_contact.jpg'
 
 @Component
 export default class ContactPage extends Vue {
+  heroImage = heroImage
   categoryList: any = [
     {
       text: 'かくれんぼ出張開催のご利用をご検討されている方',

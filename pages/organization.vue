@@ -1,6 +1,10 @@
 <template lang="pug">
 div
-  parts-hero(title="運営者情報")
+  parts-hero(
+    title="Our Information"
+    subtitle="運営者情報"
+    :image="heroImage"
+  )
   v-container
     section.mb-16
       h2.text-center.mb-8 運営団体
@@ -79,9 +83,11 @@ div
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator"
 import { Member } from "~/types"
+import heroImage from '~/assets/images/header_org.jpg'
 
 @Component
 export default class OrganizationPage extends Vue {
+  heroImage = heroImage
   memberList: Member[] = [
     {
       id: 1,

@@ -1,6 +1,10 @@
 <template lang="pug">
 div
-  parts-hero(title="スポかくとは？")
+  parts-hero(
+    title="What's SPOKAKU"
+    subtitle="スポかくとは？"
+    :image="heroImage"
+  )
   v-container
     v-row.mb-16
       v-col(cols="6")
@@ -58,9 +62,12 @@ div
 
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator"
+import heroImage from '~/assets/images/header_about.jpg'
 
 @Component
-export default class AboutPage extends Vue {}
+export default class AboutPage extends Vue {
+  heroImage = heroImage
+}
 </script>
 
 <style lang="sass" scoped>

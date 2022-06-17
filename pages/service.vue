@@ -1,6 +1,10 @@
 <template lang="pug">
 div
-  parts-hero(title="サービス")
+  parts-hero(
+    title="SERVICE"
+    subtitle="サービス"
+    :image="heroImage"
+  )
   v-container
     section.text-center.mb-16
       h2.section-title.mb-8 かくれんぼ出張開催
@@ -195,9 +199,12 @@ div
 
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator"
+import heroImage from '~/assets/images/header_service.jpg'
 
 @Component
-export default class ServicePage extends Vue {}
+export default class ServicePage extends Vue {
+  heroImage = heroImage
+}
 </script>
 
 <style lang="sass" scoped>

@@ -1,6 +1,10 @@
 <template lang="pug">
 div
-  parts-hero(title="ニュース")
+  parts-hero(
+    title="NEWS"
+    subtitle="ニュース"
+    :image="heroImage"
+  )
   v-container.mb-16
     v-btn-toggle.mb-5.d-block(
       v-model="currentCategory"
@@ -33,9 +37,11 @@ div
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator"
 import { News } from "~/types"
+import heroImage from '~/assets/images/header_news.jpg'
 
 @Component
 export default class NewsPage extends Vue {
+  heroImage = heroImage
   currentCategory: string = 'all'
   newsList: News[] = [
     {
