@@ -1,6 +1,6 @@
 <template lang="pug">
 v-card
-  img.photo(:src="photoUrl")
+  img.photo(:src="photoUrl" :alt="`${name}の写真`")
   v-card-text.text--primary
     .body-1.font-weight-black {{ name }}
     .caption {{ title }}

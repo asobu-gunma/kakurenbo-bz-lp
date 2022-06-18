@@ -1,7 +1,7 @@
 <template lang="pug">
 v-app-bar(app flat color="amber")
   n-link.logo.px-3(to="/")
-    img(src="~/assets/images/logo-short.svg")
+    img(src="~/assets/images/logo-short.svg" alt="スポかく")
   v-spacer
   v-btn(
     v-for="item in navItems"

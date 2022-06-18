@@ -1,7 +1,9 @@
 const host = "spokaku.com"
-const domain = `www.${host}`
+const domain = host
 const mailHost = "kakurenbo.club"
 const projectName = "スポかく"
+const siteTitle = `${projectName} | 公式サイト`
+const siteDescription = '「スポーツかくれんぼ（通称: スポかく）」は皆さんが一度は遊んだことがあるであろう かくれんぼに得点要素を加えてできた、全く新しいスポーツです。缶蹴りのように鬼は 拠点を守りながら探し、隠れる側は鬼に見つからないように拠点を攻める、子供の頃に 遊んだかくれんぼよりもより白熱して楽しむことができます。'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -9,18 +11,26 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'kakurenbo-biz-lp',
+    title: siteTitle,
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: siteDescription },
+      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'keywords', content: 'スポかく,スポーツかくれんぼ,かくれんぼ in ぐんま' },
+      { name: 'msapplication-TileColor', content: '#00aba9' },
+      { name: 'theme-color', content: '#1f2233' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+      { rel: 'manifest', href: '/site.webmanifest' },
+      { rel: 'mask-icon', href: 'safari-pinned-tab.svg', color: '#5bbad5' },
+      { rel: 'canonical', href: `https://${domain}` },
     ]
   },
   env: {

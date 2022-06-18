@@ -8,7 +8,7 @@ div
   v-container
     section.section-margin
       h2.text-center.mb-8 運営団体
-      img.logo-org.mb-8(src="~/assets/images/logo-org.svg")
+      img.logo-org.mb-8(src="~/assets/images/logo-org.svg" alt="かくれんぼ in ぐんま")
       table.org-info.mx-auto
         tr
           td 団体名

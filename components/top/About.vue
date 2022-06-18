@@ -4,7 +4,7 @@ section#about
     v-col(cols="6" order="2" lg)
       parts-youtube(id="fC7VVOvB5Pw")
     v-col(cols="6" order="1" lg)
-      h2.mb-2 スポかくとは？
+      h1.mb-2 スポかくとは？
       .description
         p
           | 「スポーツかくれんぼ（通称: スポかく）」は皆さんが一度は遊んだことがあるであろう
