@@ -9,21 +9,21 @@ section#service
     div スポーツかくれんぼを活用して
     div 企業や地域の課題解決をお手伝いします！
   v-row.mb-2
-    v-col(cols="4")
+    v-col(cols="12" sm="4")
       parts-service-card(
         title="企業研修"
         description1="内定者や親友社員のチーム形成"
         description2="既存社員同士のより強い結束力の醸成に！"
         :image="sampleTraining"
       )
-    v-col(cols="4")
+    v-col(cols="12" sm="4")
       parts-service-card(
         title="地域活性化"
         description1="地域の人々のつながり造り"
         description2="観光地への集客イベントに！"
         :image="sampleLocal"
       )
-    v-col(cols="4")
+    v-col(cols="12" sm="4")
       parts-service-card(
         title="商業施設イベント"
         description1="週末や季節ごとの集客"

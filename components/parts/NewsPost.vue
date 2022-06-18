@@ -1,18 +1,18 @@
 <template lang="pug">
-v-btn.mb-3(
+v-card.mb-3(
   block
-  height="60px"
   :nuxt="!news.external"
   :to="news.external ? '' : news.url"
   :href="news.external ? news.url : ''"
   :target="news.external ? '_blank' : ''"
   :rel="news.external ? 'noopener' : ''"
 )
-  span.body-2.me-5 {{ formattedPostedAt }}
-  v-chip.me-5(label small) {{ news.category }}
-  span.body-2 {{ news.title }}
-  v-spacer
-  v-icon mdi-chevron-right
+  v-card-text.text--primary
+    .news-content
+      span.body-2.me-5.date {{ formattedPostedAt }}
+      v-chip.me-5.category(label small) {{ news.category.toUpperCase() }}
+      span.body-2.title {{ news.title }}
+      v-icon.ms-auto.icon mdi-chevron-right
 </template>
 
 <script lang="ts">
@@ -30,3 +30,34 @@ export default class PartsNewsPost extends Vue {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.news-content
+  position: relative
+  width: 100%
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  @include display_sp
+    padding-right: 30px
+  .date
+    flex: 0 0 auto
+    @include display_sp
+      order: 2
+      margin-bottom: 0.5rem
+  .category
+    flex: 0 0 auto
+    @include display_sp
+      order: 1
+      margin-bottom: 0.5rem
+  .title
+    flex: 1 1 auto
+    @include display_sp
+      order: 3
+  .icon
+    @include display_sp
+      position: absolute
+      top: 50%
+      right: 0
+      transform: translateY(-50%)
+</style>

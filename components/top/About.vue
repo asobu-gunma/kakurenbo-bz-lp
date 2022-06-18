@@ -1,9 +1,9 @@
 <template lang="pug">
 section#about
   v-row
-    v-col(cols="6" order="2" lg)
+    v-col(cols="12" md="6" order="1" order-md="2")
       parts-youtube(id="fC7VVOvB5Pw")
-    v-col(cols="6" order="1" lg)
+    v-col(cols="12" md="6" order="2" order-md="1")
       h1.mb-2 スポかくとは？
       .description
         p

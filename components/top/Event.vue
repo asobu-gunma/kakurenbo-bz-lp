@@ -5,7 +5,7 @@ section#event
     sub="公式イベント"
   )
   v-row.mb-2
-    v-col(cols="6")
+    v-col(cols="12" md="6")
       .insert-image(
         v-if="!!event"
         :style="{ 'background-image': `url(${event.fields.image.fields.file.url})` }"
@@ -13,13 +13,13 @@ section#event
       .insert-image(
         v-else
       )
-    v-col(cols="6")
+    v-col(cols="12" md="6")
       template(v-if="!!event")
         h2.mb-3 {{ event.fields.title }}
         v-row.mb-3(dense)
-          v-col(cols="3")
+          v-col(cols="12" md="3")
             .font-weight-bold 開催日時
-          v-col(cols="9")
+          v-col(cols="12" md="9")
             .font-weight-bold
               span {{ datetimeArray[0] }}
               span.unit 年
@@ -32,21 +32,21 @@ section#event
               span {{ datetimeArray[4] }}
               span.unit 開始
         v-row.mb-3(dense)
-          v-col(cols="3")
+          v-col(cols="12" md="3")
             .font-weight-bold 開催場所
-          v-col(cols="9") 
+          v-col(cols="12" md="9") 
             .font-weight-bold
               span.me-3 {{ event.fields.location }}
               span.unit {{ event.fields.address }}
         v-row.mb-3(dense)
-          v-col(cols="3")
+          v-col(cols="12" md="3")
             .font-weight-bold 参加費
-          v-col(cols="9")
+          v-col(cols="12" md="9")
             .font-weight-bold {{ event.fields.fee === 0 ? '無料' : event.fields.fee + '円' }}
         v-row(dense)
-          v-col(cols="3")
+          v-col(cols="12" md="3")
             .font-weight-bold スケジュール
-          v-col(cols="9")
+          v-col(cols="12" md="9")
             .event-schedule
               ul.timeline.unit.font-weight-bold
                 li.schedule(v-for="schedule in event.fields.eventSchedule")

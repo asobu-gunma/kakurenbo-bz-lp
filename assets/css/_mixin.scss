@@ -1,13 +1,13 @@
 /* メディアクエリブレークポイント */
-$xs: 600;
-$sm: 960;
-$md: 1264;
-$lg: 1904;
+$xs: 600px;
+$sm: 960px;
+$md: 1264px;
+$lg: 1904px;
  
-$sp-max: calc($xs - 1)px;
-$tb-min: $xs + px;
-$tb-max: calc($sm - 1)px;
-$pc-min: $sm + px;
+$sp-max: calc(#{$xs} - 1px);
+$tb-min: $xs;
+$tb-max: calc(#{$sm} - 1px);
+$pc-min: $sm;
  
 /* PC */
 @mixin display_pc {

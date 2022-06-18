@@ -1,13 +1,14 @@
 <template lang="pug">
-iframe(
-  width="560"
-  height="315"
-  :src="youtubeEmbedLink"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-)
+.youtube
+  iframe(
+    width="560"
+    height="315"
+    :src="youtubeEmbedLink"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  )
 </template>
 
 <script lang="ts">
@@ -23,3 +24,16 @@ export default class PartsYoutube extends Vue {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.youtube
+  position: relative
+  width: 100%
+  padding-bottom: 56.25%
+  iframe
+    position: absolute
+    top: 0
+    right: 0
+    width: 100%
+    height: 100%
+</style>
