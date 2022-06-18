@@ -12,6 +12,7 @@ import heroImage from '~/assets/images/header_news.jpg'
     const newsRes = await app.$ctfClient.getEntries({
       content_type: 'news',
       order: '-sys.createdAt',
+      'fields.category': 'news',
     })
     const newsList: News[] = newsRes.items.map((item: { fields: News }) => item.fields)
     return { newsList }

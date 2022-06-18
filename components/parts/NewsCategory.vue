@@ -1,10 +1,13 @@
 <template lang="pug">
 v-btn(
-  :value="category"
   active-class="active-category"
+  exact-path
   block
   x-large
-) {{ category}}
+  nuxt
+  link
+  :to="path"
+) {{ category }}
 </template>
 
 <script lang="ts">
@@ -14,6 +17,9 @@ import { Vue, Component, Prop } from "nuxt-property-decorator"
 export default class PartsNewsCategory extends Vue {
   @Prop({ type: String, required: true })
   readonly category!: string
+
+  @Prop({ type: String, required: true })
+  readonly path!: string
 }
 </script>
 
