@@ -2,7 +2,7 @@
 div
   parts-hero.mb-16(
     title="NEWS"
-    subtitle="ニュース"
+    subtitle="お知らせ"
     :image="heroImage"
   )
   v-container.mb-16
@@ -50,6 +50,11 @@ import heroImage from '~/assets/images/header_news.jpg'
   }
 })
 export default class NewsPage extends Vue {
+  head() {
+    return {
+      title: `${process.env.projectName} | お知らせ`
+    }
+  }
   newsList?: News[]
   heroImage = heroImage
   currentCategory: string = 'all'

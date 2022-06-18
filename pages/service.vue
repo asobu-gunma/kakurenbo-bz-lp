@@ -2,7 +2,7 @@
 div
   parts-hero.mb-16(
     title="SERVICE"
-    subtitle="サービス"
+    subtitle="サービス紹介"
     :image="heroImage"
   )
   v-container
@@ -209,6 +209,11 @@ import sampleShop from '~/assets/images/sample_shop.jpg'
 
 @Component
 export default class ServicePage extends Vue {
+  head() {
+    return {
+      title: `${process.env.projectName} | サービス紹介`
+    }
+  }
   heroImage = heroImage
   sampleTraining = sampleTraining
   sampleLocal = sampleLocal

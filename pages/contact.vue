@@ -178,6 +178,11 @@ import heroImage from '~/assets/images/header_contact.jpg'
 
 @Component
 export default class ContactPage extends Vue {
+  head() {
+    return {
+      title: `${process.env.projectName} | お問い合わせ`
+    }
+  }
   heroImage = heroImage
   categoryList: any = [
     {
