@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/style-resources": "^1.2.1",
     "contentful": "^9.1.32",
     "core-js": "^3.19.3",
     "mailgun.js": "^7.0.2",
