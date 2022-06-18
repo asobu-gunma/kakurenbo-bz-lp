@@ -1,14 +1,14 @@
 <template lang="pug">
 div
   parts-hero.mb-16(
-    title="Contact Us"
+    title="Contact"
     subtitle="お問い合わせ"
     :image="heroImage"
   )
   v-container
     section.mb-16
       v-row(no-gutters)
-        v-col(offset="3" cols="6")
+        v-col(cols="12" md="6" offset-md="3")
           v-form(
             v-if="formInput.state === 'input'"
             v-model="valid"
@@ -88,19 +88,14 @@ div
                   text="ご依頼内容をお選びください（複数選択可）"
                   :required="true"
                 )
-                v-row
-                  v-col(
-                    v-for="(request, index) in requestList"
-                    :key="request"
-                    cols="3"
-                  )
-                    v-checkbox(
-                      v-model="formInput.requests"
-                      :hide-details="index > 0"
-                      :value="request"
-                      :label="request"
-                      :rules="[validates.checked]"
-                    )
+                v-checkbox(
+                  v-for="(request, index) in requestList"
+                  v-model="formInput.requests"
+                  :hide-details="index < (requestList.length - 1)"
+                  :value="request"
+                  :label="request"
+                  :rules="[validates.checked]"
+                )
             .mb-5
               parts-input-label(
                 text="ご質問 / ご要望 / メッセージがあればご入力ください"

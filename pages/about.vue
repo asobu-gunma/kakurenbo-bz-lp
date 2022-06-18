@@ -7,7 +7,7 @@ div
   )
   v-container
     v-row.mb-16
-      v-col(cols="6")
+      v-col(cols="12" md="6")
         h2.mb-2
           div 大人も子供も一緒に楽しめる
           div 全く新しいボーダレスなスポーツ
@@ -22,14 +22,14 @@ div
             | チームワークなど様々な要素が絡み合います。そのため子供が大人を負かせる様な場面も
             | 日常茶飯事。そんなこともあり大人も子供も同じルール、同じフィールドで楽しめる
             | ことからボーダレス（境なく誰でも参加できる）なスポーツと呼んでいます。
-      v-col(cols="6")
+      v-col(cols="12" md="6")
         parts-youtube(id="C6BzQU4_5AE")
     parts-section-title.mb-2(
       main="RULE"
       sub="公式ルール"
     )
     v-row.mb-16
-      v-col(cols="7")
+      v-col(cols="12" md="7" order="2" order-md="1")
         .description
           p
             | 公式ルールブックにあるルールの中から基本的なルールを一部ご紹介します。正式なルールをご覧になりたい方は
@@ -54,7 +54,7 @@ div
           url="https://www.kakurenbo.club/rule_book.pdf"
           external
         ) 公式ルールブックのダウンロードはこちら！
-      v-col(cols="5")
+      v-col(cols="12" md="5" order="1" order-md="2")
         img.rule-book(
           src="~/assets/images/rule_book.png"
           alt="公式ルールブック"

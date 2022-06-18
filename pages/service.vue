@@ -14,9 +14,9 @@ div
     section.section-margin
       h2.section-title.text-center.mb-8 特徴
       v-row.mb-3
-        v-col(cols="6")
+        v-col(cols="12" md="6")
           .insert-image(:style="{'background-image': `url(${require('~/assets/images/feature_enjoy.jpg')})`}")
-        v-col(cols="6")
+        v-col(cols="12" md="6")
           h3.point.mb-2
             div やれば楽しい、気づけば夢中！
             div ワクワクの体験を提供！
@@ -26,9 +26,9 @@ div
               | 楽しさはご想像の通り。思った以上に頭を使い、体を動かし、戦術なんかも奥が深い。
               | 勝ち負けもありますが、シンプルに楽しいという「体験の共有」を味わうことができます。
       v-row.mb-3
-        v-col(cols="6")
+        v-col(cols="12" md="6")
           .insert-image(:style="{'background-image': `url(${require('~/assets/images/feature_team_building.jpg')})`}")
-        v-col(cols="6")
+        v-col(cols="12" md="6")
           h3.point.mb-2
             div チームビルディングを体感！
           .description
@@ -37,9 +37,9 @@ div
               | 誰が鬼をやるのか？隠れるのに徹するのか？攻めに徹するのか？など、チーム全員で話し合い、実際のゲームで試す。
               | その結果を振り返り、次のゲームに向けて新たに作戦を立てる。かくれんぼの中でPDCAを回すことができます。
       v-row.mb-3
-        v-col(cols="6")
+        v-col(cols="12" md="6")
           .insert-image(:style="{'background-image': `url(${require('~/assets/images/feature_noborder.jpg')})`}")
-        v-col(cols="6")
+        v-col(cols="12" md="6")
           h3.point.mb-2
             div 年齢・性別・国籍関係なし！
           .description
@@ -49,7 +49,7 @@ div
               | 同じフィールド、同じルールで楽しむことができるので、世代間のコミュニケーションに課題がある企業にはもってこいです。
     section.section-margin
       h2.section-title.text-center.mb-8 イベント当日の流れ
-      .d-flex
+      .step-flow
         v-card.step-card
           v-card-text
             .d-flex.align-center
@@ -60,7 +60,8 @@ div
           v-card-text.text--primary
             | 運営スタッフ主導のもの開催の挨拶、ルール説明を行います。
             | 怪我防止のため、準備運動も行います。
-        v-icon(x-large) mdi-chevron-right
+        v-icon.pc-icon(x-large) mdi-chevron-right
+        v-icon.sp-icon(x-large) mdi-chevron-down
         v-card.step-card
           v-card-text
             .d-flex.align-center
@@ -72,7 +73,8 @@ div
             | チームに分かれてかくれんぼを実施します。
             | 1チームあたり2〜3セットのかくれんぼを体験する中で
             | チーム内の結束を高めていただきます。
-        v-icon(x-large) mdi-chevron-right
+        v-icon.pc-icon(x-large) mdi-chevron-right
+        v-icon.sp-icon(x-large) mdi-chevron-down
         v-card.step-card
           v-card-text
             .d-flex.align-center
@@ -107,7 +109,7 @@ div
           li スタッフ交通費・宿泊費
     section.section-margin
       h2.section-title.text-center.mb-8 お申込みから開催までの流れ
-      .d-flex
+      .step-flow
         v-card.step-card
           v-card-text
             .d-flex.align-center
@@ -119,7 +121,8 @@ div
             | 目的やご要望をヒアリングし、最適な開催形式を
             | ご提案いたします。ご提案については無理な営業は行わず
             | 双方が納得行く形の内容をご提示いたします。
-        v-icon(x-large) mdi-chevron-right
+        v-icon.pc-icon(x-large) mdi-chevron-right
+        v-icon.sp-icon(x-large) mdi-chevron-down
         v-card.step-card
           v-card-text
             .d-flex.align-center
@@ -131,7 +134,8 @@ div
             | お申込み後、イベント開催のスケジュールから逆算し
             | 準備を開始いたします。必要に応じて適宜打ち合わせを
             | 行い、当日に向けた詰めを行います。
-        v-icon(x-large) mdi-chevron-right
+        v-icon.pc-icon(x-large) mdi-chevron-right
+        v-icon.sp-icon(x-large) mdi-chevron-down
         v-card.step-card
           v-card-text
             .d-flex.align-center
@@ -146,21 +150,21 @@ div
     section.section-margin
       h2.section-title.text-center.mb-8 かくれんぼの活用シーン例
       v-row.mb-2
-        v-col(cols="4")
+        v-col(cols="12" md="4")
           parts-service-card(
             title="企業研修"
             description1="内定者や親友社員のチーム形成"
             description2="既存社員同士のより強い結束力の醸成に！"
             :image="sampleTraining"
           )
-        v-col(cols="4")
+        v-col(cols="12" md="4")
           parts-service-card(
             title="地域活性化"
             description1="地域の人々のつながり造り"
             description2="観光地への集客イベントに！"
             :image="sampleLocal"
           )
-        v-col(cols="4")
+        v-col(cols="12" md="4")
           parts-service-card(
             title="商業施設イベント"
             description1="週末や季節ごとの集客"
@@ -185,7 +189,7 @@ div
             description1="「かくれんぼ」というキーワードを活用し"
             description2="商品や動画などの企画・PRに！"
           )
-  .cta-area
+  section.cta-area
     h2.mb-5
       div 童心に返ってワクワクを体験したい方
       div まずはご相談ください。
@@ -225,24 +229,51 @@ export default class ServicePage extends Vue {
 .section-title
   font-size: 30px
   font-weight: bold
+  @include display_sp
+    font-size: 24px !important
 .point
   font-size: 30px
   font-weight: bold
   letter-spacing: 3px
+  @include display_sp
+    font-size: 20px !important
 .description
   font-size: 16px
   letter-spacing: 3px
   line-height: 2
-.step-card
-  width: 100%
+  @include display_sp
+    font-size: 14px !important
+.step-flow
+  display: flex
+  @include display_sp
+    display: block
+    width: 100%
+    text-align: center
+  .step-card
+    width: 100%
+    text-align: left
+  .pc-icon
+    @include display_sp
+      display: none
+  .sp-icon
+    @include display_pc
+      display: none
+    @include display_tab
+      display: none
 .fee
   font-weight: bold
   .unit
     font-size: 40px
+    @include display_sp
+      font-size: 30px !important
   .value
     font-size: 80px
+    @include display_sp
+      font-size: 60px !important
 .cta-area
   text-align: center
   background-color: #f4f4f4
   padding: 50px 0
+  h2
+    font-size: 18px
 </style>

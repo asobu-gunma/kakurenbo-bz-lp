@@ -31,12 +31,12 @@ div
     section.section-margin
       h2.text-h5.text-center.font-weight-black.mb-5 VISION
       v-row
-        v-col(cols="5")
+        v-col(cols="12" md="5")
           parts-policy(
             title="Challengingな世界"
             description="かくれんぼ「でも」世界的に有名にすることができるできるのか、そんな風に一見難しく見える「挑戦」のハードルを下げ、もっともっとみんなが挑戦しやすい世界を作りたい"
           )
-        v-col(cols="5" offset="2")
+        v-col(cols="12" md="5" offset-md="2")
           parts-policy(
             title="Universalな世界"
             description="子供、大人、女性、男性、外国人、日本人、障害者、健常者、これらの言葉が持つ概念をなくし、皆一人の人間としてフラットな繋がりを持てる世界を作りたい"
@@ -44,23 +44,23 @@ div
     section.section-margin
       h2.text-h5.text-center.font-weight-black.mb-5 VALUE
       v-row.mb-5
-        v-col(cols="5")
+        v-col(cols="12" md="5")
           parts-policy(
             title="Challenging"
             description="失敗を受け入れ、積極的に挑戦すること"
           )
-        v-col(cols="5" offset="2")
+        v-col(cols="12" md="5" offset-md="2")
           parts-policy(
             title="Sharing"
             description="成功も失敗もすべて、皆に共有するうこと"
           )
       v-row
-        v-col(cols="5")
+        v-col(cols="12" md="5")
           parts-policy(
             title="Universal"
             description="誰もが参加できる場を作ること"
           )
-        v-col(cols="5" offset="2")
+        v-col(cols="12" md="5" offset-md="2")
           parts-policy(
             title="Exciting"
             description="楽しい、面白い、ワクワクする、が根源となること"
@@ -71,7 +71,8 @@ div
         v-col(
           v-for="member in memberList"
           :key="member.id"
-          cols="3"
+          cols="12"
+          md="3"
         )
           parts-member-card(
             :name="member.name"

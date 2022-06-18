@@ -5,7 +5,7 @@ header
     flat
     color="amber"
   )
-    n-link.logo.px-3(to="/")
+    n-link.logo(to="/")
       img(src="~/assets/images/logo-short.svg" alt="スポかく")
     v-tabs(
       right
