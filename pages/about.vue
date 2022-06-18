@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  parts-hero(
+  parts-hero.mb-16(
     title="What's SPOKAKU"
     subtitle="スポかくとは？"
     :image="heroImage"

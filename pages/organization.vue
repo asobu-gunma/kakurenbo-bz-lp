@@ -1,12 +1,12 @@
 <template lang="pug">
 div
-  parts-hero(
+  parts-hero.mb-16(
     title="Our Information"
     subtitle="運営者情報"
     :image="heroImage"
   )
   v-container
-    section.mb-16
+    section.section-margin
       h2.text-center.mb-8 運営団体
       img.logo-org.mb-8(src="~/assets/images/logo-org.svg")
       table.org-info.mx-auto
@@ -19,7 +19,7 @@ div
         tr
           td 設立
           td 2020年8月
-    section.mb-16
+    section.section-margin
       h2.text-h5.text-center.font-weight-black.mb-5 MISSION
       h3.text-h4.text-center.font-weight-black.mb-5 かくれんぼを世界に持っていく
       .description.text-center
@@ -28,7 +28,7 @@ div
         div こんなにも楽しいものを群馬だけに留めておくのはもったいない
         div せっかくならば人生を掛けて世界へ持っていく
         div 原動力はただそれだけです 
-    section.mb-16
+    section.section-margin
       h2.text-h5.text-center.font-weight-black.mb-5 VISION
       v-row
         v-col(cols="5")
@@ -41,7 +41,7 @@ div
             title="Universalな世界"
             description="子供、大人、女性、男性、外国人、日本人、障害者、健常者、これらの言葉が持つ概念をなくし、皆一人の人間としてフラットな繋がりを持てる世界を作りたい"
           )
-    section.mb-16
+    section.section-margin
       h2.text-h5.text-center.font-weight-black.mb-5 VALUE
       v-row.mb-5
         v-col(cols="5")
@@ -65,7 +65,7 @@ div
             title="Exciting"
             description="楽しい、面白い、ワクワクする、が根源となること"
           )
-    section.mb-16
+    section.section-margin
       h2.text-center.mb-8 運営メンバー
       v-row
         v-col(

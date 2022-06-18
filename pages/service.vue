@@ -1,17 +1,17 @@
 <template lang="pug">
 div
-  parts-hero(
+  parts-hero.mb-16(
     title="SERVICE"
     subtitle="サービス"
     :image="heroImage"
   )
   v-container
-    section.text-center.mb-16
+    section.text-center.section-margin
       h2.section-title.mb-8 かくれんぼ出張開催
       .description
         div ご要望・目的に応じて「スポーツかくれんぼ」を出張開催いたします。
         div 楽しさをベースに、様々な課題解決のお手伝いをいたします。
-    section.mb-16
+    section.section-margin
       h2.section-title.text-center.mb-8 特徴
       v-row.mb-3
         v-col(cols="6")
@@ -19,7 +19,7 @@ div
         v-col(cols="6")
           h3.point.mb-2
             div やれば楽しい、気づけば夢中！
-            div の体験を提供！
+            div ワクワクの体験を提供！
           .description
             p
               | 誰もが一度はやったことがある「かくれんぼ」をベースとしたスポーツです。
@@ -47,7 +47,7 @@ div
               | 体力、知力、チームワークそれから隠れる上手さなど、単純な運動能力勝負ではないため、
               | 年齢・性別・国籍に関係なく誰もが楽しむことができます。世代が離れていても、
               | 同じフィールド、同じルールで楽しむことができるので、世代間のコミュニケーションに課題がある企業にはもってこいです。
-    section.mb-16
+    section.section-margin
       h2.section-title.text-center.mb-8 イベント当日の流れ
       .d-flex
         v-card.step-card
@@ -84,11 +84,11 @@ div
             | 優勝チームの発表、表彰を行います。
             | 閉会の挨拶を行い、イベントは終了となります。
             | 終了後の記念撮影なども承っています。
-    section.mb-16
+    section.section-margin
       h2.section-title.text-center 料金
       .fee.text-center.mb-5
         span.unit 基本料金
-        span.value 30
+        span.value 20
         span.unit 万円〜
       .body-1.font-weight-bold.text-center.mb-5 料金内訳
       .d-flex.justify-center.mb-10
@@ -105,7 +105,7 @@ div
           li 設備運搬費用
           li イベント保険料
           li スタッフ交通費・宿泊費
-    section.mb-16
+    section.section-margin
       h2.section-title.text-center.mb-8 お申込みから開催までの流れ
       .d-flex
         v-card.step-card
@@ -143,7 +143,7 @@ div
             | 幹事さま、運営スタッフにて、参加者の準備が
             | 整ったことを確認し、イベントを開催します。
             | 当日の進行は基本的には運営スタッフが行います。
-    section.mb-16
+    section.section-margin
       h2.section-title.text-center.mb-8 かくれんぼの活用シーン例
       v-row.mb-2
         v-col(cols="4")

@@ -43,4 +43,6 @@ body
   font-size: 14px
   line-height: 2
   letter-spacing: 3px
+.section-margin
+  margin-bottom: 80px
 </style>

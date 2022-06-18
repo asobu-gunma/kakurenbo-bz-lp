@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  parts-hero(
+  parts-hero.mb-16(
     title="Contact Us"
     subtitle="お問い合わせ"
     :image="heroImage"
@@ -276,7 +276,7 @@ https://www.spokaku.com
 https://www.kakurenbo.club
 
 # Facebookグループ「かくれんぼの裏側」
-https://www.facebook.com/groups/705675266823073
+https://www.facebook.com/groups/kakurenbo
 
 ====================================
 `

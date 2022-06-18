@@ -2,10 +2,10 @@
 div
   top-hero.mb-16
   v-container
-    top-about.mb-16
-    top-news.mb-16(:newsList="newsList")
-    top-service.mb-16
-    top-event.mb-16(:event="event")
+    top-about.section-margin
+    top-news.section-margin(:newsList="newsList")
+    top-service.section-margin
+    top-event.section-margin(:event="event")
   parts-contact-btn
 </template>
 

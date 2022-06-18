@@ -1,5 +1,5 @@
 <template lang="pug">
-section.hero-area.mb-16
+section.hero-area
   .hero(:style="{'background-image': `url(${image})`}")
   .hero-text
     h1.hero-title {{ title }}
