@@ -65,10 +65,23 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
   ],
   styleResources: {
     sass: ['~/assets/css/index.scss']
+  },
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: `https://${domain}`,
+    gzip: true
+  },
+  robots: {
+    UserAgent: '*',
+    // クローリングしないパスを記述
+    // sitemap.xmlのURLを記述
+    Sitemap: `https://${domain}/sitemap.xml`,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

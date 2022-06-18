@@ -9,6 +9,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/robots": "^2.5.0",
+    "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.2.1",
     "contentful": "^9.1.32",
     "core-js": "^3.19.3",
