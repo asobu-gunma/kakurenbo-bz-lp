@@ -8,7 +8,9 @@ div
   v-container
     section.section-margin
       h2.text-center.mb-8 運営団体
-      img.logo-org.mb-8(src="~/assets/images/logo-org.svg" alt="かくれんぼ in ぐんま")
+      .text-center.mb-8
+        a.logo-org(href="https://www.kakurenbo.club" target="_blank" rel="noopener")
+          img(src="~/assets/images/logo-org.svg" alt="かくれんぼ in ぐんま")
       table.org-info.mx-auto
         tr
           td 団体名
@@ -112,10 +114,9 @@ export default class OrganizationPage extends Vue {
 
 <style lang="sass" scoped>
 .logo-org
-  width: 200px
-  height: auto
-  display: block
-  margin: 0 auto
+  img
+    width: 200px
+    height: auto
 .org-info
   tr
     td
@@ -124,4 +125,3 @@ export default class OrganizationPage extends Vue {
         font-weight: bold
         padding-right: 0.75rem
 </style>
-
