@@ -19,6 +19,9 @@ div
         tr
           td 設立
           td 2020年8月
+        tr
+          td 所在地
+          td 群馬県渋川市
     section.section-margin
       h2.text-h5.text-center.font-weight-black.mb-5 MISSION
       h3.text-h4.text-center.font-weight-black.mb-5 かくれんぼを世界に持っていく
