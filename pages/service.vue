@@ -90,7 +90,7 @@ div
       h2.section-title.text-center 料金
       .fee.text-center.mb-5
         span.unit 基本料金
-        span.value 20
+        span.value 30
         span.unit 万円〜
       .body-1.font-weight-bold.text-center.mb-5 料金内訳
       .d-flex.justify-center.mb-10
