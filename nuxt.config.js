@@ -4,6 +4,7 @@ const mailHost = "kakurenbo.club"
 const projectName = "スポかく"
 const siteTitle = `${projectName} | 公式サイト`
 const siteDescription = '「スポーツかくれんぼ（通称: スポかく）」は皆さんが一度は遊んだことがあるであろう かくれんぼに得点要素を加えてできた、全く新しいスポーツです。缶蹴りのように鬼は 拠点を守りながら探し、隠れる側は鬼に見つからないように拠点を攻める、子供の頃に 遊んだかくれんぼよりもより白熱して楽しむことができます。'
+const GAID = 'G-XTWD4SSBY9'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -31,7 +32,21 @@ export default {
       { rel: 'manifest', href: '/site.webmanifest' },
       { rel: 'mask-icon', href: 'safari-pinned-tab.svg', color: '#5bbad5' },
       { rel: 'canonical', href: `https://${domain}` },
-    ]
+    ],
+    script: [
+      {
+        hid: 'GAsrc',
+        src: 'https://www.googletagmanager.com/gtag/js?id=' + GAID
+      },
+      {
+        hid: 'GAcode',
+        innerHTML: GAcode
+      }
+    ],
+    __dangerouslyDisableSanitizersByTagID: {
+      'GAsrc': ['innerHTML'],
+      'GAcode': ['innerHTML']
+    }
   },
   env: {
     ctfSpaceId: process.env.CTF_SPACE_ID,
@@ -68,10 +83,6 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
-    ['@nuxtjs/google-gtag', {
-      id: 'G-XTWD4SSBY9',
-      debug: false,
-    }],
   ],
   styleResources: {
     sass: ['~/assets/css/index.scss']
