@@ -68,6 +68,10 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
+    ['@nuxtjs/google-gtag', {
+      id: 'G-XTWD4SSBY9',
+      debug: false,
+    }],
   ],
   styleResources: {
     sass: ['~/assets/css/index.scss']
