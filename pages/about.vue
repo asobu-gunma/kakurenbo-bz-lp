@@ -55,8 +55,8 @@ div
           external
         ) 公式ルールブックのダウンロードはこちら！
       v-col(cols="12" md="5" order="1" order-md="2")
-        img.rule-book(
-          src="~/assets/images/rule_book.png"
+        v-img.mb-2(
+          :src="ruleBook"
           alt="公式ルールブック"
         )
         .caption.text-right.text--grey 公式ルールブック
@@ -66,6 +66,7 @@ div
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator"
 import heroImage from '~/assets/images/header_about.jpg'
+import ruleBook from '~/assets/images/rule_book.png'
 
 @Component
 export default class AboutPage extends Vue {
@@ -75,6 +76,7 @@ export default class AboutPage extends Vue {
     }
   }
   heroImage = heroImage
+  ruleBook = ruleBook
 }
 </script>
 
@@ -84,7 +86,4 @@ export default class AboutPage extends Vue {
   letter-spacing: 3px
   li
     margin-bottom: 0.75rem
-.rule-book
-  width: 100%
-  height: auto
 </style>

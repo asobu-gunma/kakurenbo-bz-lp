@@ -9,8 +9,12 @@ div
     section.section-margin
       h2.text-center.mb-8 運営団体
       .text-center.mb-8
-        a.logo-org(href="https://www.kakurenbo.club" target="_blank" rel="noopener")
-          img(src="~/assets/images/logo-org.svg" alt="かくれんぼ in ぐんま")
+        a.d-inline-block(href="https://www.kakurenbo.club" target="_blank" rel="noopener")
+          v-img(
+            :src="logo"
+            alt="かくれんぼ in ぐんま"
+            width="200px"
+          )
       table.org-info.mx-auto
         tr
           td 団体名
@@ -91,6 +95,7 @@ div
 import { Vue, Component } from "nuxt-property-decorator"
 import { Member } from "~/types"
 import heroImage from '~/assets/images/header_org.jpg'
+import logo from '~/assets/images/logo-org.svg'
 
 @Component({
   async asyncData({ app }) {
@@ -109,14 +114,11 @@ export default class OrganizationPage extends Vue {
     }
   }
   heroImage = heroImage
+  logo = logo
 }
 </script>
 
 <style lang="sass" scoped>
-.logo-org
-  img
-    width: 200px
-    height: auto
 .org-info
   tr
     td

@@ -1,6 +1,6 @@
 <template lang="pug">
 v-card
-  img.photo(:src="photoUrl" :alt="`${name}の写真`")
+  v-img.photo(:src="photoUrl" :alt="`${name}の写真`")
   v-card-text.text--primary
     .body-1.font-weight-black {{ name }}
     .caption {{ title }}
@@ -21,11 +21,3 @@ export default class PartsMemberCard extends Vue {
   readonly photoUrl!: string
 }
 </script>
-
-<style lang="sass" scoped>
-.photo
-  width: 100%
-  height: 100%
-  object-fit: cover
-  background-color: #f4f4f4
-</style>

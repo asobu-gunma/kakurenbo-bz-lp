@@ -6,7 +6,11 @@ header
     color="amber"
   )
     n-link.logo(to="/")
-      img(src="~/assets/images/logo-short.svg" alt="スポかく")
+      v-img(
+        :src="logo"
+        alt="スポかく"
+        width="45px"
+      )
     v-tabs(
       right
       color="dark"
@@ -59,9 +63,12 @@ header
 <script lang="ts">
 import { Vue, Component, Prop } from "nuxt-property-decorator"
 import { NavItem } from "~/types"
+import logo from "~/assets/images/logo-short.svg"
 
 @Component
 export default class GlobalHeader extends Vue {
+  logo = logo
+
   @Prop({ type: Array, required: true })
   readonly navItems!: NavItem[]
 
@@ -72,9 +79,6 @@ export default class GlobalHeader extends Vue {
 <style lang="sass" scoped>
 .logo
   line-height: 1
-  img
-    height: 45px
-    width: auto
 .v-app-bar__nav-icon
   @include display_pc
     display: none !important
