@@ -6,9 +6,11 @@ section#event
   )
   v-row.mb-2
     v-col(cols="12" md="6")
-      .insert-image(
+      v-img(
         v-if="!!event"
-        :style="{ 'background-image': `url(${event.fields.image.fields.file.url})` }"
+        :src="event.fields.image.fields.file.url"
+        width="100%"
+        aspect-ratio="1.7778"
       )
       .insert-image(
         v-else

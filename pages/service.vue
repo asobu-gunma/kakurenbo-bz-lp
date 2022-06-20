@@ -13,79 +13,42 @@ div
         div 楽しさをベースに、様々な課題解決のお手伝いをいたします。
     section.section-margin
       h2.section-title.text-center.mb-8 特徴
-      v-row.mb-3
-        v-col(cols="12" md="6")
-          .insert-image(:style="{'background-image': `url(${require('~/assets/images/feature_enjoy.jpg')})`}")
-        v-col(cols="12" md="6")
-          h3.point.mb-2
-            div やれば楽しい、気づけば夢中！
-            div ワクワクの体験を提供！
-          .description
-            p
-              | 誰もが一度はやったことがある「かくれんぼ」をベースとしたスポーツです。
-              | 楽しさはご想像の通り。思った以上に頭を使い、体を動かし、戦術なんかも奥が深い。
-              | 勝ち負けもありますが、シンプルに楽しいという「体験の共有」を味わうことができます。
-      v-row.mb-3
-        v-col(cols="12" md="6")
-          .insert-image(:style="{'background-image': `url(${require('~/assets/images/feature_team_building.jpg')})`}")
-        v-col(cols="12" md="6")
-          h3.point.mb-2
-            div チームビルディングを体感！
-          .description
-            p
-              | 基本はチーム戦となるため、チームワークが勝敗の鍵を握ります。
-              | 誰が鬼をやるのか？隠れるのに徹するのか？攻めに徹するのか？など、チーム全員で話し合い、実際のゲームで試す。
-              | その結果を振り返り、次のゲームに向けて新たに作戦を立てる。かくれんぼの中でPDCAを回すことができます。
-      v-row.mb-3
-        v-col(cols="12" md="6")
-          .insert-image(:style="{'background-image': `url(${require('~/assets/images/feature_noborder.jpg')})`}")
-        v-col(cols="12" md="6")
-          h3.point.mb-2
-            div 年齢・性別・国籍関係なし！
-          .description
-            p
-              | 体力、知力、チームワークそれから隠れる上手さなど、単純な運動能力勝負ではないため、
-              | 年齢・性別・国籍に関係なく誰もが楽しむことができます。世代が離れていても、
-              | 同じフィールド、同じルールで楽しむことができるので、世代間のコミュニケーションに課題がある企業にはもってこいです。
+      parts-service-feature(
+        v-for="feature in featureList"
+        :key="feature.alt"
+        :image="feature.image"
+        :alt="feature.alt"
+        :titleList="feature.titleList"
+        :description="feature.description"
+      )
     section.section-margin
       h2.section-title.text-center.mb-8 イベント当日の流れ
       .step-flow
-        v-card.step-card
-          v-card-text
-            .d-flex.align-center
-              v-chip.me-3(color="amber") 1
-              span.body-1.font-weight-bold.me-3.text--primary オープニング
-              span.caption 所要時間: 15分
-          .insert-image(:style="{'background-image': `url(${require('~/assets/images/game_flow_opening.jpg')})`}")
-          v-card-text.text--primary
-            | 運営スタッフ主導のもの開催の挨拶、ルール説明を行います。
-            | 怪我防止のため、準備運動も行います。
+        parts-step-card(
+          step="1"
+          :title="gameFlow[0].title"
+          :caption="gameFlow[0].caption"
+          :image="gameFlow[0].image"
+          :description="gameFlow[0].description"
+        )
         v-icon.pc-icon(x-large) mdi-chevron-right
         v-icon.sp-icon(x-large) mdi-chevron-down
-        v-card.step-card
-          v-card-text
-            .d-flex.align-center
-              v-chip.me-3(color="amber") 2
-              span.body-1.font-weight-bold.me-3.text--primary かくれんぼ実施
-              span.caption 所要時間: 60~120分
-          .insert-image(:style="{'background-image': `url(${require('~/assets/images/game_flow_playing.jpg')})`}")
-          v-card-text.text--primary
-            | チームに分かれてかくれんぼを実施します。
-            | 1チームあたり2〜3セットのかくれんぼを体験する中で
-            | チーム内の結束を高めていただきます。
+        parts-step-card(
+          step="2"
+          :title="gameFlow[1].title"
+          :caption="gameFlow[1].caption"
+          :image="gameFlow[1].image"
+          :description="gameFlow[1].description"
+        )
         v-icon.pc-icon(x-large) mdi-chevron-right
         v-icon.sp-icon(x-large) mdi-chevron-down
-        v-card.step-card
-          v-card-text
-            .d-flex.align-center
-              v-chip.me-3(color="amber") 3
-              span.body-1.font-weight-bold.me-3.text--primary クロージング
-              span.caption 所要時間: 15分
-          .insert-image(:style="{'background-image': `url(${require('~/assets/images/game_flow_closing.jpg')})`}")
-          v-card-text.text--primary
-            | 優勝チームの発表、表彰を行います。
-            | 閉会の挨拶を行い、イベントは終了となります。
-            | 終了後の記念撮影なども承っています。
+        parts-step-card(
+          step="3"
+          :title="gameFlow[2].title"
+          :caption="gameFlow[2].caption"
+          :image="gameFlow[2].image"
+          :description="gameFlow[2].description"
+        )
     section.section-margin
       h2.section-title.text-center 料金
       .fee.text-center.mb-5
@@ -110,43 +73,31 @@ div
     section.section-margin
       h2.section-title.text-center.mb-8 お申込みから開催までの流れ
       .step-flow
-        v-card.step-card
-          v-card-text
-            .d-flex.align-center
-              v-chip.me-3(color="amber") 1
-              span.body-1.font-weight-bold.me-3.text--primary ヒアリング・提案
-              span.caption 開催1〜2ヶ月前
-          .insert-image(:style="{'background-image': `url(${require('~/assets/images/event_flow_meeting.jpg')})`}")
-          v-card-text.text--primary
-            | 目的やご要望をヒアリングし、最適な開催形式を
-            | ご提案いたします。ご提案については無理な営業は行わず
-            | 双方が納得行く形の内容をご提示いたします。
+        parts-step-card(
+          step="1"
+          :title="eventFlow[0].title"
+          :caption="eventFlow[0].caption"
+          :image="eventFlow[0].image"
+          :description="eventFlow[0].description"
+        )
         v-icon.pc-icon(x-large) mdi-chevron-right
         v-icon.sp-icon(x-large) mdi-chevron-down
-        v-card.step-card
-          v-card-text
-            .d-flex.align-center
-              v-chip.me-3(color="amber") 2
-              span.body-1.font-weight-bold.me-3.text--primary 準備・打ち合わせ
-              span.caption 開催1ヶ月〜1週間前
-          .insert-image(:style="{'background-image': `url(${require('~/assets/images/event_flow_prepare.jpg')})`}")
-          v-card-text.text--primary
-            | お申込み後、イベント開催のスケジュールから逆算し
-            | 準備を開始いたします。必要に応じて適宜打ち合わせを
-            | 行い、当日に向けた詰めを行います。
+        parts-step-card(
+          step="2"
+          :title="eventFlow[1].title"
+          :caption="eventFlow[1].caption"
+          :image="eventFlow[1].image"
+          :description="eventFlow[1].description"
+        )
         v-icon.pc-icon(x-large) mdi-chevron-right
         v-icon.sp-icon(x-large) mdi-chevron-down
-        v-card.step-card
-          v-card-text
-            .d-flex.align-center
-              v-chip.me-3(color="amber") 3
-              span.body-1.font-weight-bold.me-3.text--primary イベント開催
-              span.caption 当日
-          .insert-image(:style="{'background-image': `url(${require('~/assets/images/event_flow_start.jpg')})`}")
-          v-card-text.text--primary
-            | 幹事さま、運営スタッフにて、参加者の準備が
-            | 整ったことを確認し、イベントを開催します。
-            | 当日の進行は基本的には運営スタッフが行います。
+        parts-step-card(
+          step="3"
+          :title="eventFlow[2].title"
+          :caption="eventFlow[2].caption"
+          :image="eventFlow[2].image"
+          :description="eventFlow[2].description"
+        )
     section.section-margin
       h2.section-title.text-center.mb-8 かくれんぼの活用シーン例
       v-row.mb-2
@@ -207,6 +158,15 @@ div
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator"
 import heroImage from '~/assets/images/header_service.jpg'
+import featureEnjoy from '~/assets/images/feature_enjoy.jpg'
+import featureTeamBuilding from '~/assets/images/feature_team_building.jpg'
+import featureNoborder from '~/assets/images/feature_noborder.jpg'
+import gameFlowOpening from '~/assets/images/game_flow_opening.jpg'
+import gameFlowPlaying from '~/assets/images/game_flow_playing.jpg'
+import gameFlowClosing from '~/assets/images/game_flow_closing.jpg'
+import eventFlowMeeting from '~/assets/images/event_flow_meeting.jpg'
+import eventFlowPrepare from '~/assets/images/event_flow_prepare.jpg'
+import eventFlowStart from '~/assets/images/event_flow_start.jpg'
 import sampleTraining from '~/assets/images/sample_training.jpg'
 import sampleLocal from '~/assets/images/sample_local.jpg'
 import sampleShop from '~/assets/images/sample_shop.jpg'
@@ -222,6 +182,74 @@ export default class ServicePage extends Vue {
   sampleTraining = sampleTraining
   sampleLocal = sampleLocal
   sampleShop = sampleShop
+  featureList = [
+    {
+      image: featureEnjoy,
+      alt: 'ワクワクの体験',
+      titleList: [
+        'やれば楽しい、気づけば夢中！',
+        'ワクワクの体験を提供！'
+      ],
+      description: '誰もが一度はやったことがある「かくれんぼ」をベースとしたスポーツです。楽しさはご想像の通り。思った以上に頭を使い、体を動かし、戦術なんかも奥が深い。勝ち負けもありますが、シンプルに楽しいという「体験の共有」を味わうことができます。' 
+    },
+    {
+      image: featureTeamBuilding,
+      alt: 'チームビルディング',
+      titleList: [
+        'チームビルディングを体感！',
+      ],
+      description: '基本はチーム戦となるため、チームワークが勝敗の鍵を握ります。誰が鬼をやるのか？隠れるのに徹するのか？攻めに徹するのか？など、チーム全員で話し合い、実際のゲームで試す。その結果を振り返り、次のゲームに向けて新たに作戦を立てる。かくれんぼの中でPDCAを回すことができます。'
+    },
+    {
+      image: featureNoborder,
+      alt: 'ノーボーダースポーツ',
+      titleList: [
+        '年齢・性別・国籍関係なし！',
+        'かくれんぼを通して親睦深まる！'
+      ],
+      description: '体力、知力、チームワークそれから隠れる上手さなど、単純な運動能力勝負ではないため、年齢・性別・国籍に関係なく誰もが楽しむことができます。世代が離れていても、同じフィールド、同じルールで楽しむことができるので、世代間のコミュニケーションに課題がある企業にはもってこいです。'
+    },
+  ]
+  gameFlow = [
+    {
+      title: 'オープニング',
+      caption: '所要時間: 15分',
+      image: gameFlowOpening,
+      description: '運営スタッフ主導のもの開催の挨拶、ルール説明を行います。怪我防止のため、準備運動も行います。'
+    },
+    {
+      title: 'かくれんぼ実施',
+      caption: '所要時間: 60〜120分',
+      image: gameFlowPlaying,
+      description: 'チームに分かれてかくれんぼを実施します。1チームあたり2〜3セットのかくれんぼを体験する中でチーム内の結束を高めていただきます。'
+    },
+    {
+      title: 'クロージング',
+      caption: '所要時間: 15分',
+      image: gameFlowClosing,
+      description: '優勝チームの発表、表彰を行います。閉会の挨拶を行い、イベントは終了となります。終了後の記念撮影なども承っています。'
+    },
+  ]
+  eventFlow = [
+    {
+      title: 'ヒアリング・提案',
+      caption: '開催1〜2ヶ月前',
+      image: eventFlowMeeting,
+      description: '目的やご要望をヒアリングし、最適な開催形式をご提案いたします。ご提案については無理な営業は行わず双方が納得行く形の内容をご提示いたします。'
+    },
+    {
+      title: '準備・打ち合わせ',
+      caption: '開催1ヶ月〜1週間前',
+      image: eventFlowPrepare,
+      description: 'お申込み後、イベント開催のスケジュールから逆算し準備を開始いたします。必要に応じて適宜打ち合わせを行い、当日に向けた詰めを行います。'
+    },
+    {
+      title: 'イベント開催',
+      caption: '当日',
+      image: eventFlowStart,
+      description: '幹事さま、運営スタッフにて、参加者の準備が整ったことを確認し、イベントを開催します。当日の進行は基本的には運営スタッフが行います。'
+    },
+  ]
 }
 </script>
 
@@ -231,27 +259,12 @@ export default class ServicePage extends Vue {
   font-weight: bold
   @include display_sp
     font-size: 24px !important
-.point
-  font-size: 30px
-  font-weight: bold
-  letter-spacing: 3px
-  @include display_sp
-    font-size: 20px !important
-.description
-  font-size: 16px
-  letter-spacing: 3px
-  line-height: 2
-  @include display_sp
-    font-size: 14px !important
 .step-flow
   display: flex
   @include display_sp
     display: block
     width: 100%
     text-align: center
-  .step-card
-    width: 100%
-    text-align: left
   .pc-icon
     @include display_sp
       display: none

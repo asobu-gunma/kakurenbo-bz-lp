@@ -1,6 +1,11 @@
 <template lang="pug">
 section.hero-area
-  .hero(:style="{'background-image': `url(${image})`}")
+  v-img.hero(
+    :src="image"
+    :alt="title"
+    width="100%"
+    height="300px"
+  )
   .hero-text
     h1.hero-title {{ title }}
     h2.hero-subtitle {{ subtitle }}
@@ -27,10 +32,6 @@ export default class PartsHero extends Vue {
   position: relative
   .hero
     position: relative
-    width: 100%
-    height: 300px
-    background-position: center center
-    background-size: cover
     &::after
       content: ''
       position: absolute

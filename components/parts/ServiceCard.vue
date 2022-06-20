@@ -1,7 +1,12 @@
 <template lang="pug">
 v-card.text-center
   v-card-text.title.font-weight-bold.text--primary {{ title }}
-  .insert-image(:style="{'background-image': `url(${image})`}")
+  v-img(
+    :src="image"
+    :alt="title"
+    width="100%"
+    aspect-ratio="1.7778"
+  )
   v-card-text.caption.text--primary
     div {{ description1 }}
     div {{ description2 }}
