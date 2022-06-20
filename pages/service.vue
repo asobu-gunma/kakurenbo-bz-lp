@@ -215,7 +215,7 @@ import sampleShop from '~/assets/images/sample_shop.jpg'
 export default class ServicePage extends Vue {
   head() {
     return {
-      title: `${process.env.projectName} | サービス紹介`
+      title: `サービス紹介 - ${process.env.projectName}`
     }
   }
   heroImage = heroImage

@@ -21,7 +21,7 @@ import heroImage from '~/assets/images/header_news.jpg'
 export default class NewsPage extends Vue {
   head() {
     return {
-      title: `${process.env.projectName} | お知らせ`
+      title: `お知らせ（イベント） - ${process.env.projectName}`
     }
   }
   heroImage = heroImage

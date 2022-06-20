@@ -105,7 +105,7 @@ import heroImage from '~/assets/images/header_org.jpg'
 export default class OrganizationPage extends Vue {
   head() {
     return {
-      title: `${process.env.projectName} | 運営者情報`
+      title: `運営者情報 - ${process.env.projectName}`
     }
   }
   heroImage = heroImage

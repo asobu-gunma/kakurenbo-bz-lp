@@ -71,7 +71,7 @@ import heroImage from '~/assets/images/header_about.jpg'
 export default class AboutPage extends Vue {
   head() {
     return {
-      title: `${process.env.projectName} | スポかくとは？`
+      title: `スポかくとは? - ${process.env.projectName}`
     }
   }
   heroImage = heroImage

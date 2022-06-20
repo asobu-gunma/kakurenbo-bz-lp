@@ -175,7 +175,7 @@ import heroImage from '~/assets/images/header_contact.jpg'
 export default class ContactPage extends Vue {
   head() {
     return {
-      title: `${process.env.projectName} | お問い合わせ`
+      title: `お問い合わせ - ${process.env.projectName}`
     }
   }
   heroImage = heroImage
