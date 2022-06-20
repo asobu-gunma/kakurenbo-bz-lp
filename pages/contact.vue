@@ -90,6 +90,7 @@ div
                 )
                 v-checkbox(
                   v-for="(request, index) in requestList"
+                  :key="index"
                   v-model="formInput.requests"
                   :hide-details="index < (requestList.length - 1)"
                   :value="request"
