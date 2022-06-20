@@ -37,7 +37,8 @@ export default {
     script: [
       {
         hid: 'GAsrc',
-        src: 'https://www.googletagmanager.com/gtag/js?id=' + GAID
+        src: 'https://www.googletagmanager.com/gtag/js?id=' + GAID,
+        async: true
       },
       {
         hid: 'GAcode',
