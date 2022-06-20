@@ -1,6 +1,7 @@
 <template lang="pug">
 .youtube
   iframe(
+    loading="lazy"
     width="560"
     height="315"
     :src="youtubeEmbedLink"
