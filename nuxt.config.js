@@ -5,6 +5,7 @@ const projectName = "スポかく"
 const siteTitle = `${projectName} | 公式サイト`
 const siteDescription = '「スポーツかくれんぼ（通称: スポかく）」は皆さんが一度は遊んだことがあるであろう かくれんぼに得点要素を加えてできた、全く新しいスポーツです。缶蹴りのように鬼は 拠点を守りながら探し、隠れる側は鬼に見つからないように拠点を攻める、子供の頃に 遊んだかくれんぼよりもより白熱して楽しむことができます。'
 const GAID = 'G-XTWD4SSBY9'
+const GAcode = `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${GAID}');`
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
