@@ -8,13 +8,13 @@ div
   v-container.mb-16
     v-row.mb-3(dense)
       v-col(cols="3")
-        parts-news-category(category="all" path="/news")
+        parts-news-category(category="all" path="/news/")
       v-col(cols="3")
-        parts-news-category(category="news" path="/news/news")
+        parts-news-category(category="news" path="/news/news/")
       v-col(cols="3")
-        parts-news-category(category="media" path="/news/media")
+        parts-news-category(category="media" path="/news/media/")
       v-col(cols="3")
-        parts-news-category(category="event" path="/news/event")
+        parts-news-category(category="event" path="/news/event/")
     parts-news-post.mb-3(
       v-for="news in newsList"
       :key="news.id"

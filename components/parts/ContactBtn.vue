@@ -8,7 +8,7 @@ v-btn(
   bottom
   link
   nuxt
-  to="/contact"
+  to="/contact/"
 )
   v-icon mdi-email
 </template>

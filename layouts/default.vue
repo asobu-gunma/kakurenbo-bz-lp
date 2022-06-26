@@ -20,11 +20,11 @@ import { NavItem } from "~/types"
 })
 export default class DefaultLayout extends Vue {
   navItems: NavItem[] = [
-    { text: 'スポかくとは？', url: '/about' },
-    { text: 'お知らせ', url: '/news' },
-    { text: 'サービス紹介', url: '/service' },
-    { text: '運営者情報', url: '/organization' },
-    { text: 'お問い合わせ', url: '/contact' },
+    { text: 'スポかくとは？', url: '/about/' },
+    { text: 'お知らせ', url: '/news/' },
+    { text: 'サービス紹介', url: '/service/' },
+    { text: '運営者情報', url: '/organization/' },
+    { text: 'お問い合わせ', url: '/contact/' },
     { text: 'ブログ', url: 'https://www.kakurenbo.club/blog', external: true },
   ]
 }

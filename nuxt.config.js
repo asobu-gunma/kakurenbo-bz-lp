@@ -85,6 +85,7 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
+    '@nuxtjs/redirect-module',
   ],
   styleResources: {
     sass: ['~/assets/css/index.scss']
@@ -92,7 +93,8 @@ export default {
   sitemap: {
     path: '/sitemap.xml',
     hostname: `https://${domain}`,
-    gzip: true
+    gzip: true,
+    trailingSlash: true,
   },
   robots: {
     UserAgent: '*',
@@ -100,6 +102,13 @@ export default {
     // sitemap.xmlのURLを記述
     Sitemap: `https://${domain}/sitemap.xml`,
   },
+  redirect: [
+    {
+      from: '^(\\/[^\\?]*[^\\/])(\\?.*)?$',
+      to: '$1/$2',
+      statusCode: 301
+    }
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -109,5 +118,8 @@ export default {
         ["@babel/plugin-proposal-class-properties", { loose: true }]
       ]
     },
+  },
+  router: {
+    trailingSlash: true
   }
 }

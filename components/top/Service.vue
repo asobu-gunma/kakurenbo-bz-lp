@@ -30,7 +30,7 @@ section#service
         description2="来場者の購買促進イベントに！"
         :image="sampleShop"
       )
-  parts-cta-btn(url="/service") 出張開催についての詳細はこちらから！
+  parts-cta-btn(url="/service/") 出張開催についての詳細はこちらから！
 </template>
 
 <script lang="ts">

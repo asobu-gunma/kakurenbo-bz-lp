@@ -9,7 +9,7 @@ section#news
     :key="news.title"
     :news="news"
   )
-  parts-cta-btn.mt-2(url="/news") 過去のNEWSの一覧はこちらから！
+  parts-cta-btn.mt-2(url="/news/") 過去のNEWSの一覧はこちらから！
 </template>
 
 <script lang="ts">

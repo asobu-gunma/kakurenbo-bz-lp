@@ -149,7 +149,7 @@ div
       color="amber"
       link
       nuxt
-      to="/contact"
+      to="/contact/"
     )
       .font-weight-bold ご相談はこちらから！
   parts-contact-btn
