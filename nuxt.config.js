@@ -101,6 +101,7 @@ export default {
     // クローリングしないパスを記述
     // sitemap.xmlのURLを記述
     Sitemap: `https://${domain}/sitemap.xml`,
+    Disallow: '/_nuxt/'
   },
   redirect: [
     {
