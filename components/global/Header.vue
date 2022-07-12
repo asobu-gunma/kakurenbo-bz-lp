@@ -13,6 +13,7 @@ header
       )
     v-tabs(
       right
+      optional
       color="dark"
     )
       v-tab(
