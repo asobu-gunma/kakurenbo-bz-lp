@@ -49,7 +49,7 @@ div
           :image="gameFlow[2].image"
           :description="gameFlow[2].description"
         )
-    section.section-margin
+    // section.section-margin
       h2.section-title.text-center 料金
       .fee.text-center.mb-5
         span.unit 基本料金
