@@ -20,7 +20,7 @@ import { NavItem } from "~/types"
 })
 export default class DefaultLayout extends Vue {
   navItems: NavItem[] = [
-    { text: 'スポかくとは？', url: '/about/' },
+    { text: '競技について', url: '/about/' },
     { text: 'お知らせ', url: '/news/' },
     { text: 'サービス紹介', url: '/service/' },
     { text: '運営者情報', url: '/organization/' },

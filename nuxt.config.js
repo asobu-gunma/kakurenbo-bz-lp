@@ -1,7 +1,7 @@
 const host = "spokaku.com"
 const domain = host
 const mailHost = "kakurenbo.club"
-const projectName = "スポかく"
+const projectName = "スポーツかくれんぼ協会"
 const siteTitle = `${projectName} - 大人も子供も一緒に楽しめるスポーツかくれんぼ`
 const siteDescription = '「スポーツかくれんぼ（通称: スポかく）」は皆さんが一度は遊んだことがあるであろう かくれんぼに得点要素を加えてできた、全く新しいスポーツです。缶蹴りのように鬼は 拠点を守りながら探し、隠れる側は鬼に見つからないように拠点を攻める、子供の頃に 遊んだかくれんぼよりもより白熱して楽しむことができます。'
 const GAID = 'G-XTWD4SSBY9'
@@ -22,7 +22,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: siteDescription },
       { name: 'format-detection', content: 'telephone=no' },
-      { name: 'keywords', content: 'スポかく,スポーツかくれんぼ,かくれんぼ in ぐんま' },
+      { name: 'keywords', content: 'スポかく,スポーツかくれんぼ協会,かくれんぼ in ぐんま' },
       { name: 'msapplication-TileColor', content: '#00aba9' },
       { name: 'theme-color', content: '#1f2233' },
     ],

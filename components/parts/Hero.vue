@@ -52,6 +52,7 @@ export default class PartsHero extends Vue {
     z-index: 2
     .hero-title
       font-size: 48px
+      line-height: 1.1
     .hero-subtitle
       font-size: 24px
 </style>

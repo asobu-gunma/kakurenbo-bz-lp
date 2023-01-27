@@ -1,8 +1,8 @@
 <template lang="pug">
 div
   parts-hero.mb-16(
-    title="What's SPOKAKU"
-    subtitle="スポかくとは？"
+    title="SPORTS KAKURENBO?"
+    subtitle="スポーツかくれんぼとは？"
     :image="heroImage"
   )
   v-container
@@ -72,7 +72,7 @@ import ruleBook from '~/assets/images/rule_book.png'
 export default class AboutPage extends Vue {
   head() {
     return {
-      title: `スポかくとは? - ${process.env.projectName}`
+      title: `スポーツかくれんぼとは？ - ${process.env.projectName}`
     }
   }
   heroImage = heroImage

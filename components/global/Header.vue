@@ -8,8 +8,8 @@ header
     n-link.logo(to="/")
       v-img(
         :src="logo"
-        alt="スポかく"
-        width="45px"
+        alt="スポーツかくれんぼ協会"
+        width="160px"
       )
     v-tabs(
       right
@@ -64,7 +64,7 @@ header
 <script lang="ts">
 import { Vue, Component, Prop } from "nuxt-property-decorator"
 import { NavItem } from "~/types"
-import logo from "~/assets/images/logo-short.svg"
+import logo from "~/assets/images/logo-long.svg"
 
 @Component
 export default class GlobalHeader extends Vue {
