@@ -49,11 +49,11 @@ div
           :image="gameFlow[2].image"
           :description="gameFlow[2].description"
         )
-    // section.section-margin
+    section.section-margin
       h2.section-title.text-center 料金
       .fee.text-center.mb-5
         span.unit 基本料金
-        span.value 30
+        span.value 5
         span.unit 万円〜
       .body-1.font-weight-bold.text-center.mb-5 料金内訳
       .d-flex.justify-center.mb-10
@@ -62,14 +62,24 @@ div
           li スポーツかくれんぼライセンス費用
           li 設備・備品レンタル費用
           li 設備設置費用
-          li 当日の運営スタッフ費用
       .body-1.font-weight-bold.text-center.mb-5 料金に含まれないもの
       .d-flex.justify-center
         ul.body-2
           li 会場使用料
           li 設備運搬費用
           li イベント保険料
+          li 当日の運営スタッフ費用
           li スタッフ交通費・宿泊費
+    section.section-margin
+      h2.section-title.text-center.mb-8 利用者の声
+      parts-service-feature(
+        v-for="feature in voiceList"
+        :key="feature.alt"
+        :image="feature.image"
+        :alt="feature.alt"
+        :titleList="feature.titleList"
+        :description="feature.description"
+      )
     section.section-margin
       h2.section-title.text-center.mb-8 お申込みから開催までの流れ
       .step-flow
@@ -164,6 +174,8 @@ import featureNoborder from '~/assets/images/feature_noborder.jpg'
 import gameFlowOpening from '~/assets/images/game_flow_opening.jpg'
 import gameFlowPlaying from '~/assets/images/game_flow_playing.jpg'
 import gameFlowClosing from '~/assets/images/game_flow_closing.jpg'
+import voice01 from '~/assets/images/voice01.jpg'
+import voice02 from '~/assets/images/voice02.jpg'
 import eventFlowMeeting from '~/assets/images/event_flow_meeting.jpg'
 import eventFlowPrepare from '~/assets/images/event_flow_prepare.jpg'
 import eventFlowStart from '~/assets/images/event_flow_start.jpg'
@@ -228,6 +240,24 @@ export default class ServicePage extends Vue {
       caption: '所要時間: 15分',
       image: gameFlowClosing,
       description: '優勝チームの発表、表彰を行います。閉会の挨拶を行い、イベントは終了となります。終了後の記念撮影なども承っています。'
+    },
+  ]
+  voiceList = [
+    {
+      image: voice01,
+      alt: '伊勢崎清明高校 体育祭',
+      titleList: [
+        '伊勢崎清明高校 体育祭'
+      ],
+      description: '学年別対抗戦でスポーツかくれんぼを採用しました。小さい頃に楽しんだかくれんぼが、本格的なスポーツとして楽しめるとは思ってもみませんでした。参加した学生たちも本気になり、一つのスポーツとして楽しむことができました！またやりたいです！'
+    },
+    {
+      image: voice02,
+      alt: '共愛学園前橋国際大学 クリスマス会',
+      titleList: [
+        '共愛学園前橋国際大学 クリスマス会'
+      ],
+      description: '年末のクリスマス会のコンテンツの1つとしてかくれんぼをやりました。初めて参加する学生がほとんどでしたが、子供の頃にやりなれた遊びなだけあり、すぐに慣れていました。白熱する場面も多く現場は大盛りあがりでした！！'
     },
   ]
   eventFlow = [
