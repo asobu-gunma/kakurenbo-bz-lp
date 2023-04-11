@@ -5,7 +5,7 @@ section#hero
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "nuxt-property-decorator"
+import { Vue, Component } from "nuxt-property-decorator";
 
 @Component
 export default class TopHero extends Vue {}
@@ -15,9 +15,12 @@ export default class TopHero extends Vue {}
 #hero
   position: relative
   width: 100%
-  height: calc(100vh - 64px)
   background-color: #f4f4f4
   overflow: hidden
+  @include display_pc
+    height: calc(100vh - 64px)
+  @include display_sp
+    aspect-ratio: 1
   video
     min-width: 100%
     min-height: 100%

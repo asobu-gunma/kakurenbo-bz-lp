@@ -38,8 +38,8 @@ section#event
             .font-weight-bold 開催場所
           v-col(cols="12" md="9") 
             .font-weight-bold
-              span.me-3 {{ event.fields.location }}
-              span.unit {{ event.fields.address }}
+              .mb-2 {{ event.fields.location }}
+              .unit {{ event.fields.address }}
         v-row.mb-3(dense)
           v-col(cols="12" md="3")
             .font-weight-bold 参加費
@@ -60,27 +60,29 @@ section#event
         .description 開催予定が決まり次第随時更新いたします。
   parts-cta-btn(
     v-if="!!event"
-    url="https://www.kakurenbo.club/event"
+    :url="`https://www.kakurenbo.club/event/${event.fields.slug}/`"
     external
   ) かくれんぼへの参加申込はこちらから！
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from "nuxt-property-decorator"
+import { Vue, Component, Prop } from "nuxt-property-decorator";
 
 @Component
 export default class TopEvent extends Vue {
   @Prop({ type: Object, required: true })
-  readonly event!: object
+  readonly event!: object;
 
   parseDatetimeArray(datetime: any): string[] {
     //@ts-ignore
-    return this.$dateFns.format(datetime, "yyyy,M,d,E,H:mm", { locale: 'ja' }).split(',')
+    return this.$dateFns
+      .format(datetime, "yyyy,M,d,E,H:mm", { locale: "ja" })
+      .split(",");
   }
 
   get datetimeArray(): string[] {
     //@ts-ignore
-    return this.parseDatetimeArray(this.event.fields.eventDate)
+    return this.parseDatetimeArray(this.event.fields.eventDate);
   }
 }
 </script>
